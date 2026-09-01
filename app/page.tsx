@@ -201,8 +201,8 @@ export default function HomePage() {
               </h2>
 
               <p className="mt-1 text-xs leading-5 text-white/35">
-                Real fireworks explosion sound from
-                boom1.mp3.
+                Real fireworks explosion sound
+          
               </p>
             </div>
 
