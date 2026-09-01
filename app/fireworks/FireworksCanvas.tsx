@@ -163,10 +163,10 @@ SOUNDS
 */
 
 const NORMAL_SOUND =
-  "/sounds/fireworks/boom1.mp3";
+  "/sounds/fireworks/Boom1.mp3";
 
 const SPECIAL_SOUND =
-  "/sounds/fireworks/boom2.mp3";
+  "/sounds/fireworks/Boom2.mp3";
 
 /*
  * Launch sound intentionally removed.
