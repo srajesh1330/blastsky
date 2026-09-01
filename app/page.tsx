@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import FireworksCanvas, {
-  unlockFireworksAudio,
   type FireworksMode,
 } from "./fireworks/FireworksCanvas";
 
@@ -26,7 +25,7 @@ export default function HomePage() {
        * It unlocks the Web Audio context before the fireworks
        * canvas is mounted.
        */
-      await unlockFireworksAudio();
+      
     } finally {
       setActive(true);
       setStarting(false);
