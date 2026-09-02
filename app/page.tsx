@@ -30,15 +30,17 @@ export default function HomePage() {
     }, 250);
   };
 
+  /* FIREWORKS SCREEN */
   if (active) {
-    return (
-      <FireworksCanvas
-        mode={mode}
-        duration={duration}
-        onExit={() => setActive(false)}
-      />
-    );
-  }
+  return (
+    <FireworksCanvas
+      active={active}
+      mode={mode}
+      duration={duration}
+      onFinished={() => setActive(false)}
+    />
+  );
+}
 
   return (
     <main className="min-h-screen bg-[#030712] text-white">
@@ -53,12 +55,12 @@ export default function HomePage() {
           >
             <img
               src="/blastsky-logo.png"
-              alt="BlastSky - Online Fireworks Simulator"
-              className="h-12 w-auto object-contain sm:h-14"
+              alt="BlastSky - Free Online Fireworks Simulator"
+              className="h-14 w-auto object-contain sm:h-16"
             />
           </Link>
 
-          {/* NAVIGATION */}
+          {/* DESKTOP NAV */}
           <nav className="hidden items-center gap-7 md:flex">
             <Link
               href="/"
@@ -103,7 +105,7 @@ export default function HomePage() {
             </Link>
           </nav>
 
-          {/* LAUNCH BUTTON */}
+          {/* LAUNCH */}
           <button
             onClick={startFireworks}
             disabled={starting}
@@ -188,7 +190,7 @@ export default function HomePage() {
             </div>
           )}
 
-          {/* CTA */}
+          {/* MAIN CTA */}
           <button
             onClick={startFireworks}
             disabled={starting}
@@ -473,7 +475,7 @@ export default function HomePage() {
               <img
                 src="/blastsky-logo.png"
                 alt="BlastSky"
-                className="h-10 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </Link>
 
@@ -611,13 +613,16 @@ function FaqItem({
       <summary className="cursor-pointer list-none font-semibold">
         <div className="flex items-center justify-between gap-4">
           <span>{question}</span>
+
           <span className="text-gray-500 transition group-open:rotate-45">
             +
           </span>
         </div>
       </summary>
 
-      <p className="mt-4 pr-8 text-sm leading-7 text-gray-400">{answer}</p>
+      <p className="mt-4 pr-8 text-sm leading-7 text-gray-400">
+        {answer}
+      </p>
     </details>
   );
 }
