@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #03030b;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -12,15 +12,148 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #03030b;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(124, 58, 237, 0.12),
+      transparent 35%
+    ),
+    #03030b;
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(192, 132, 252, 0.95);
+  outline-offset: 3px;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   BUTTON VISIBILITY FIX
+   ========================================================= */
+
+/*
+ * White buttons must always have dark text.
+ * This fixes buttons that accidentally inherit white text.
+ */
+
+button.bg-white,
+a.bg-white {
+  color: #000000;
+}
+
+/*
+ * Explicit text utilities still work normally.
+ */
+
+button.text-white,
+a.text-white {
+  color: #ffffff;
+}
+
+button.text-black,
+a.text-black {
+  color: #000000;
+}
+
+/*
+ * Disabled buttons
+ */
+
+button:disabled {
+  opacity: 0.7;
+}
+
+/* =========================================================
+   SELECT FIX
+   ========================================================= */
+
+select {
+  color: #ffffff;
+  background-color: #090912;
+}
+
+select option {
+  color: #ffffff;
+  background-color: #090912;
+}
+
+/* =========================================================
+   MOBILE TOUCH
+   ========================================================= */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+
+  button {
+    min-height: 44px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: rgba(168, 85, 247, 0.35);
+  color: #ffffff;
 }
