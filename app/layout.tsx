@@ -104,6 +104,39 @@ export default function RootLayout({
       <body>
         {children}
 
+        {/* BlastSky Structured SEO Data */}
+        <Script
+          id="blastsky-structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "BlastSky",
+            url: SITE_URL,
+            description:
+              "BlastSky is a free online fireworks simulator where users can create interactive virtual fireworks displays with manual launching or automatic shows.",
+            applicationCategory: "EntertainmentApplication",
+            operatingSystem: "Any",
+            browserRequirements: "Requires a modern web browser",
+            isAccessibleForFree: true,
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+            featureList: [
+              "Free online fireworks simulator",
+              "Manual fireworks launching",
+              "Automatic fireworks shows",
+              "Virtual fireworks animations",
+              "Fireworks sound effects",
+              "Mobile and desktop support",
+            ],
+          })}
+        </Script>
+
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4YDBQ7GB5Z"
