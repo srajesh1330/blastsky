@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/about",
   },
+  openGraph: {
+    title: "About BlastSky – Free Online Fireworks Simulator",
+    description:
+      "Learn about BlastSky and discover how our free virtual fireworks simulator creates interactive fireworks experiences in your browser.",
+    url: "https://blastsky.vercel.app/about",
+    type: "website",
+  },
 };
 
 const features = [
@@ -62,8 +69,39 @@ const steps = [
 ];
 
 export default function AboutPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About BlastSky",
+    url: "https://blastsky.vercel.app/about",
+    description:
+      "Learn about BlastSky, a free interactive virtual fireworks simulator designed for fun and immersive fireworks experiences on desktop and mobile.",
+    mainEntity: {
+      "@type": "WebApplication",
+      name: "BlastSky",
+      url: "https://blastsky.vercel.app",
+      applicationCategory: "EntertainmentApplication",
+      operatingSystem: "Any",
+      browserRequirements: "Requires a modern web browser",
+      isAccessibleForFree: true,
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+    },
+  };
+
   return (
     <main className="min-h-screen overflow-hidden bg-[#03030b] text-white">
+      {/* Structured SEO Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+
       {/* Background atmosphere */}
       <div className="pointer-events-none fixed inset-0 -z-0 overflow-hidden">
         <div className="absolute left-[-10%] top-[-15%] h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[130px]" />
@@ -194,20 +232,9 @@ export default function AboutPage() {
       {/* Stats */}
       <section className="relative z-10 px-5 pb-20 sm:px-8">
         <div className="mx-auto grid max-w-5xl gap-3 sm:grid-cols-3">
-          <StatCard
-            value="100%"
-            label="Browser Based"
-          />
-
-          <StatCard
-            value="2"
-            label="Play Modes"
-          />
-
-          <StatCard
-            value="∞"
-            label="Fireworks Fun"
-          />
+          <StatCard value="100%" label="Browser Based" />
+          <StatCard value="2" label="Play Modes" />
+          <StatCard value="∞" label="Fireworks Fun" />
         </div>
       </section>
 
@@ -372,15 +399,10 @@ export default function AboutPage() {
       <footer className="relative z-10 border-t border-white/[0.06] bg-black/20 px-5 py-10 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <Link
-              href="/"
-              className="flex items-center gap-2.5"
-            >
+            <Link href="/" className="flex items-center gap-2.5">
               <span className="text-xl">🎆</span>
 
-              <span className="font-black">
-                BlastSky
-              </span>
+              <span className="font-black">BlastSky</span>
             </Link>
 
             <p className="mt-2 text-xs text-white/25">
@@ -389,17 +411,11 @@ export default function AboutPage() {
           </div>
 
           <nav className="flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold text-white/35">
-            <Link
-              href="/"
-              className="transition hover:text-white"
-            >
+            <Link href="/" className="transition hover:text-white">
               Home
             </Link>
 
-            <Link
-              href="/about"
-              className="text-white"
-            >
+            <Link href="/about" className="text-white">
               About
             </Link>
 
