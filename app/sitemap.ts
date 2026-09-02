@@ -1,42 +1,44 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://blastsky.com";
+const SITE_URL = "https://blastsky.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+
   return [
     {
-      url: siteUrl,
-      lastModified: new Date(),
+      url: SITE_URL,
+      lastModified,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${siteUrl}/fireworks`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/fireworks`,
+      lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/contact`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/about`,
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: `${siteUrl}/privacy`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/contact`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: `${SITE_URL}/privacy`,
+      lastModified,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
-      url: `${siteUrl}/terms`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/terms`,
+      lastModified,
       changeFrequency: "yearly",
       priority: 0.3,
     },

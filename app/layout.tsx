@@ -1,37 +1,36 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://blastsky.com";
+const SITE_URL = "https://blastsky.vercel.app";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
 
   title: {
-    default: "BlastSky - Interactive Fireworks Experience",
+    default: "BlastSky – Free Online Fireworks Simulator",
     template: "%s | BlastSky",
   },
 
   description:
-    "Experience interactive virtual fireworks with BlastSky. Launch colorful fireworks manually or enjoy an automatic fireworks show with realistic effects and sounds.",
+    "Experience a free online fireworks simulator with colorful interactive fireworks, automatic shows, realistic explosion sounds, and fullscreen mode.",
 
   keywords: [
-    "fireworks",
+    "online fireworks simulator",
     "virtual fireworks",
-    "online fireworks",
-    "fireworks simulator",
-    "fireworks show",
+    "fireworks show online",
     "interactive fireworks",
-    "BlastSky",
+    "free fireworks simulator",
+    "fireworks animation",
+    "realistic fireworks",
   ],
 
-  authors: [
-    {
-      name: "BlastSky",
-    },
-  ],
-
+  authors: [{ name: "BlastSky" }],
   creator: "BlastSky",
   publisher: "BlastSky",
+
+  alternates: {
+    canonical: SITE_URL,
+  },
 
   robots: {
     index: true,
@@ -45,25 +44,21 @@ export const metadata: Metadata = {
     },
   },
 
-  alternates: {
-    canonical: "/",
-  },
-
   openGraph: {
     type: "website",
-    url: siteUrl,
-    title: "BlastSky - Interactive Fireworks Experience",
+    url: SITE_URL,
+    title: "BlastSky – Free Online Fireworks Simulator",
     description:
-      "Launch virtual fireworks manually or enjoy an automatic fireworks show with colorful effects and realistic sounds.",
+      "Create your own virtual fireworks show with BlastSky. Launch colorful fireworks manually or enjoy an automatic show with realistic explosion sounds.",
     siteName: "BlastSky",
     locale: "en_US",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "BlastSky - Interactive Fireworks Experience",
+    title: "BlastSky – Free Online Fireworks Simulator",
     description:
-      "Create your own spectacular virtual fireworks experience with BlastSky.",
+      "Experience interactive virtual fireworks with colorful explosions and realistic fireworks sounds.",
   },
 
   category: "entertainment",
