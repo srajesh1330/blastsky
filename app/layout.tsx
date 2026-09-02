@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const SITE_URL = "https://blastsky.vercel.app";
@@ -45,11 +46,8 @@ export const metadata: Metadata = {
 
   creator: "BlastSky",
   publisher: "BlastSky",
-
   applicationName: "BlastSky",
-
   category: "entertainment",
-
   classification: "Online Fireworks Simulator",
 
   alternates: {
@@ -102,11 +100,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      data-scroll-behavior="smooth"
-    >
-      <body>{children}</body>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body>
+        {children}
+
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4YDBQ7GB5Z"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4YDBQ7GB5Z');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
