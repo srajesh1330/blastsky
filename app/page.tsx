@@ -53,16 +53,12 @@ export default function HomePage() {
       ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Purple glow */}
         <div className="absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[140px]" />
 
-        {/* Blue glow */}
         <div className="absolute -right-40 top-[15%] h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[140px]" />
 
-        {/* Pink glow */}
         <div className="absolute bottom-[-250px] left-[30%] h-[600px] w-[600px] rounded-full bg-fuchsia-600/10 blur-[150px]" />
 
-        {/* Stars */}
         <div className="absolute left-[8%] top-[18%] h-1 w-1 rounded-full bg-white/60" />
         <div className="absolute left-[17%] top-[35%] h-1 w-1 rounded-full bg-white/30" />
         <div className="absolute left-[28%] top-[12%] h-1 w-1 rounded-full bg-white/50" />
@@ -78,7 +74,6 @@ export default function HomePage() {
         <div className="absolute left-[57%] top-[52%] h-1 w-1 rounded-full bg-white/20" />
         <div className="absolute left-[78%] top-[48%] h-1 w-1 rounded-full bg-white/20" />
 
-        {/* Grid */}
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
@@ -95,8 +90,6 @@ export default function HomePage() {
 
       <header className="absolute inset-x-0 top-0 z-30">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
-          {/* Logo */}
-
           <Link
             href="/"
             className="group flex items-center gap-3"
@@ -116,8 +109,6 @@ export default function HomePage() {
               </div>
             </div>
           </Link>
-
-          {/* Desktop navigation */}
 
           <nav
             className="hidden items-center gap-7 md:flex"
@@ -159,8 +150,6 @@ export default function HomePage() {
             </Link>
           </nav>
 
-          {/* Launch */}
-
           <Link
             href="/fireworks"
             className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-xs font-black text-black shadow-[0_8px_30px_rgba(255,255,255,0.08)] transition duration-300 hover:-translate-y-0.5 hover:bg-white/90 sm:px-5"
@@ -177,14 +166,10 @@ export default function HomePage() {
 
       <section className="relative z-10 flex min-h-screen items-center px-5 pb-20 pt-32 sm:px-8">
         <div className="mx-auto w-full max-w-6xl text-center">
-          {/* Badge */}
-
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/45 backdrop-blur-xl">
             <span className="h-1.5 w-1.5 rounded-full bg-purple-400 shadow-[0_0_12px_rgba(192,132,252,0.9)]" />
             Free Online Fireworks Simulator
           </div>
-
-          {/* Fireworks icon */}
 
           <div
             className="mb-6 text-6xl drop-shadow-[0_0_35px_rgba(168,85,247,0.35)] sm:text-8xl"
@@ -193,21 +178,16 @@ export default function HomePage() {
             🎆
           </div>
 
-          {/* Heading */}
-
           <h1
             className="mx-auto max-w-5xl text-5xl font-black tracking-[-0.05em] sm:text-7xl md:text-8xl"
             id="hero-title"
           >
             Light up
             <br />
-
             <span className="bg-gradient-to-r from-purple-300 via-fuchsia-300 to-blue-300 bg-clip-text text-transparent">
               the virtual sky.
             </span>
           </h1>
-
-          {/* Subtitle */}
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/45 sm:text-lg">
             Experience colorful virtual fireworks directly in your browser.
@@ -215,9 +195,7 @@ export default function HomePage() {
             automatic fireworks show with immersive effects and sound.
           </p>
 
-          {/* =================================================
-              MODE SELECTOR
-          ================================================== */}
+          {/* MODE SELECTOR */}
 
           <div className="mx-auto mt-10 w-full max-w-xl">
             <div
@@ -256,10 +234,6 @@ export default function HomePage() {
               </button>
             </div>
 
-            {/* =================================================
-                DURATION
-            ================================================== */}
-
             {mode === "auto" && (
               <div className="mt-4 rounded-2xl border border-white/10 bg-black/55 p-4 backdrop-blur-xl">
                 <p className="mb-3 text-[10px] font-black uppercase tracking-[0.2em] text-white/30">
@@ -292,10 +266,6 @@ export default function HomePage() {
               </div>
             )}
 
-            {/* =================================================
-                START BUTTON
-            ================================================== */}
-
             <button
               type="button"
               onClick={startFireworks}
@@ -326,9 +296,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* =================================================
-              FEATURES
-          ================================================== */}
+          {/* FEATURES */}
 
           <section
             className="mx-auto mt-14 grid max-w-5xl gap-3 sm:grid-cols-3"
@@ -356,10 +324,13 @@ export default function HomePage() {
       </section>
 
       {/* =====================================================
-          ABOUT SECTION
+          ABOUT BLASTSKY
       ====================================================== */}
 
-      <section className="relative z-10 border-y border-white/[0.06] bg-white/[0.015] px-5 py-20 sm:px-8 sm:py-28">
+      <section
+        className="relative z-10 border-y border-white/[0.06] bg-white/[0.015] px-5 py-20 sm:px-8 sm:py-28"
+        aria-labelledby="about-blastsky"
+      >
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -367,7 +338,10 @@ export default function HomePage() {
                 About BlastSky
               </div>
 
-              <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-5xl">
+              <h2
+                id="about-blastsky"
+                className="mt-4 text-3xl font-black tracking-tight sm:text-5xl"
+              >
                 Your browser.
                 <br />
                 Your fireworks.
@@ -378,13 +352,16 @@ export default function HomePage() {
 
             <div>
               <p className="text-sm leading-8 text-white/45 sm:text-base">
-                BlastSky is a free virtual fireworks experience designed to
-                bring the excitement of fireworks directly to your screen.
+                BlastSky is a free online fireworks simulator that brings a
+                colorful virtual fireworks experience directly to your web
+                browser. You can launch fireworks yourself, experiment with
+                different effects, or enjoy an automatic fireworks show.
               </p>
 
               <p className="mt-5 text-sm leading-8 text-white/45 sm:text-base">
-                Choose Manual Mode to launch individual fireworks yourself,
-                or switch to Auto Show and watch the virtual sky come alive.
+                The experience is designed for modern desktop and mobile
+                browsers, with interactive controls, colorful explosions,
+                optional sound effects and fullscreen support.
               </p>
 
               <Link
@@ -400,17 +377,81 @@ export default function HomePage() {
       </section>
 
       {/* =====================================================
+          HOW IT WORKS
+      ====================================================== */}
+
+      <section
+        className="relative z-10 px-5 py-20 sm:px-8 sm:py-28"
+        aria-labelledby="how-it-works"
+      >
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="text-xs font-black uppercase tracking-[0.24em] text-purple-300/60">
+              Simple to use
+            </div>
+
+            <h2
+              id="how-it-works"
+              className="mt-4 text-3xl font-black tracking-tight sm:text-5xl"
+            >
+              How BlastSky works
+            </h2>
+
+            <p className="mt-5 text-sm leading-7 text-white/40 sm:text-base">
+              Start a virtual fireworks show in just a few simple steps.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <StepCard
+              number="01"
+              icon="🎆"
+              title="Choose a mode"
+              text="Select Manual Mode if you want to launch fireworks yourself, or Auto Show for a hands-free display."
+            />
+
+            <StepCard
+              number="02"
+              icon="⏱️"
+              title="Choose your duration"
+              text="Automatic shows can run for 5, 10, 15 or 30 minutes."
+            />
+
+            <StepCard
+              number="03"
+              icon="👆"
+              title="Launch fireworks"
+              text="In Manual Mode, click or tap the virtual sky to create your own fireworks."
+            />
+
+            <StepCard
+              number="04"
+              icon="✨"
+              title="Enjoy the show"
+              text="Watch colorful explosions, trails and effects fill the virtual night sky."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
           FEATURE DETAILS
       ====================================================== */}
 
-      <section className="relative z-10 px-5 py-20 sm:px-8 sm:py-28">
+      <section
+        className="relative z-10 border-y border-white/[0.06] bg-white/[0.012] px-5 py-20 sm:px-8 sm:py-28"
+        aria-labelledby="features-title"
+      >
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
             <div className="text-xs font-black uppercase tracking-[0.24em] text-blue-300/60">
               Explore the experience
             </div>
 
-            <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-5xl">
+            <h2
+              id="features-title"
+              className="mt-4 text-3xl font-black tracking-tight sm:text-5xl"
+            >
               More ways to enjoy the sky.
             </h2>
 
@@ -424,25 +465,193 @@ export default function HomePage() {
             <DetailCard
               icon="🎨"
               title="Colors"
-              text="Explore different colors and colorful combinations."
+              text="Explore different colors and colorful combinations for your virtual fireworks display."
             />
 
             <DetailCard
               icon="💥"
               title="Firework Styles"
-              text="Enjoy a variety of shapes and explosion patterns."
+              text="Enjoy a variety of shapes and explosion patterns inspired by different fireworks effects."
             />
 
             <DetailCard
               icon="⚡"
               title="Intensity"
-              text="Control the energy and scale of your virtual display."
+              text="Control the energy and scale of your virtual display for a calmer or more energetic experience."
             />
 
             <DetailCard
               icon="⛶"
               title="Fullscreen"
-              text="Expand the experience and enjoy a larger virtual sky."
+              text="Expand the experience and enjoy a larger virtual sky on supported devices."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FIREWORKS STYLES
+      ====================================================== */}
+
+      <section
+        className="relative z-10 px-5 py-20 sm:px-8 sm:py-28"
+        aria-labelledby="fireworks-styles"
+      >
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+            <div>
+              <div className="text-xs font-black uppercase tracking-[0.24em] text-fuchsia-300/60">
+                Virtual fireworks
+              </div>
+
+              <h2
+                id="fireworks-styles"
+                className="mt-4 text-3xl font-black tracking-tight sm:text-5xl"
+              >
+                Explore different
+                <br />
+                fireworks styles.
+              </h2>
+
+              <p className="mt-6 text-sm leading-8 text-white/40 sm:text-base">
+                BlastSky includes a variety of virtual fireworks effects,
+                allowing you to create different looks across the night sky.
+                Depending on the experience settings, you can enjoy patterns
+                such as colorful bursts, rings, spirals, glittering effects
+                and more.
+              </p>
+
+              <Link
+                href="/fireworks"
+                className="mt-7 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-black text-black transition hover:-translate-y-0.5 hover:bg-white/90"
+              >
+                Explore Fireworks
+                <span>→</span>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <StyleCard icon="🎇" title="Burst" />
+              <StyleCard icon="💫" title="Spiral" />
+              <StyleCard icon="⭕" title="Ring" />
+              <StyleCard icon="✨" title="Glitter" />
+              <StyleCard icon="🌟" title="Star" />
+              <StyleCard icon="🎆" title="Finale" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          WHY BLASTSKY
+      ====================================================== */}
+
+      <section
+        className="relative z-10 border-y border-white/[0.06] bg-white/[0.015] px-5 py-20 sm:px-8 sm:py-28"
+        aria-labelledby="why-blastsky"
+      >
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="text-xs font-black uppercase tracking-[0.24em] text-purple-300/60">
+              Why BlastSky
+            </div>
+
+            <h2
+              id="why-blastsky"
+              className="mt-4 text-3xl font-black tracking-tight sm:text-5xl"
+            >
+              A simple way to enjoy virtual fireworks.
+            </h2>
+
+            <p className="mt-6 text-sm leading-8 text-white/40 sm:text-base">
+              BlastSky provides an interactive fireworks experience without
+              requiring a separate application or complicated setup. Open the
+              website, choose your experience and enjoy the virtual sky.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            <InfoCard
+              icon="🌐"
+              title="Runs in your browser"
+              text="Enjoy BlastSky directly from a modern web browser without installing desktop software."
+            />
+
+            <InfoCard
+              icon="📱"
+              title="Desktop and mobile"
+              text="The experience is designed to work across phones, tablets and desktop screens."
+            />
+
+            <InfoCard
+              icon="🎆"
+              title="Interactive experience"
+              text="Launch fireworks yourself or sit back and watch an automatic virtual fireworks show."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FAQ
+      ====================================================== */}
+
+      <section
+        className="relative z-10 px-5 py-20 sm:px-8 sm:py-28"
+        aria-labelledby="faq-title"
+      >
+        <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="text-xs font-black uppercase tracking-[0.24em] text-blue-300/60">
+              Frequently asked questions
+            </div>
+
+            <h2
+              id="faq-title"
+              className="mt-4 text-3xl font-black tracking-tight sm:text-5xl"
+            >
+              BlastSky FAQ
+            </h2>
+
+            <p className="mt-5 text-sm leading-7 text-white/40 sm:text-base">
+              Quick answers about the online fireworks simulator.
+            </p>
+          </div>
+
+          <div className="mt-12 space-y-3">
+            <FaqItem
+              question="Is BlastSky free to use?"
+              answer="Yes. BlastSky is designed as a free online fireworks simulator that you can use directly in your browser."
+            />
+
+            <FaqItem
+              question="Do I need to install anything?"
+              answer="No. BlastSky runs directly in a modern web browser, so there is no separate application required."
+            />
+
+            <FaqItem
+              question="Can I use BlastSky on my phone?"
+              answer="Yes. BlastSky is designed to work on desktop, tablet and mobile devices with a modern browser."
+            />
+
+            <FaqItem
+              question="Can I launch fireworks manually?"
+              answer="Yes. Select Manual Mode and click or tap the virtual sky after starting the experience to launch fireworks."
+            />
+
+            <FaqItem
+              question="Does BlastSky have an automatic fireworks show?"
+              answer="Yes. Select Auto Show and choose a duration of 5, 10, 15 or 30 minutes."
+            />
+
+            <FaqItem
+              question="Does BlastSky have fireworks sounds?"
+              answer="Yes. The fireworks experience includes optional explosion sound effects. Your browser may require an interaction before audio can play."
+            />
+
+            <FaqItem
+              question="Can I watch BlastSky in fullscreen?"
+              answer="Yes. The fireworks experience includes fullscreen support on compatible browsers and devices."
             />
           </div>
         </div>
@@ -483,70 +692,43 @@ export default function HomePage() {
 
       <footer className="relative z-10 border-t border-white/[0.06] bg-black/20 px-5 py-10 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
-          {/* Footer brand */}
-
           <div>
-            <Link
-              href="/"
-              className="flex items-center gap-2.5"
-            >
+            <Link href="/" className="flex items-center gap-2.5">
               <span className="text-xl">🎆</span>
 
-              <span className="font-black">
-                BlastSky
-              </span>
+              <span className="font-black">BlastSky</span>
             </Link>
 
             <p className="mt-2 text-xs text-white/25">
-              Interactive virtual fireworks experience.
+              Free online virtual fireworks simulator.
             </p>
           </div>
-
-          {/* Footer links */}
 
           <nav
             className="flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold text-white/35"
             aria-label="Footer navigation"
           >
-            <Link
-              href="/"
-              className="transition hover:text-white"
-            >
+            <Link href="/" className="transition hover:text-white">
               Home
             </Link>
 
-            <Link
-              href="/fireworks"
-              className="transition hover:text-white"
-            >
+            <Link href="/fireworks" className="transition hover:text-white">
               Fireworks
             </Link>
 
-            <Link
-              href="/about"
-              className="transition hover:text-white"
-            >
+            <Link href="/about" className="transition hover:text-white">
               About
             </Link>
 
-            <Link
-              href="/privacy"
-              className="transition hover:text-white"
-            >
+            <Link href="/privacy" className="transition hover:text-white">
               Privacy
             </Link>
 
-            <Link
-              href="/terms"
-              className="transition hover:text-white"
-            >
+            <Link href="/terms" className="transition hover:text-white">
               Terms
             </Link>
 
-            <Link
-              href="/contact"
-              className="transition hover:text-white"
-            >
+            <Link href="/contact" className="transition hover:text-white">
               Contact
             </Link>
           </nav>
@@ -581,13 +763,9 @@ function FeatureCard({
         {icon}
       </div>
 
-      <h2 className="mt-3 text-sm font-bold text-white">
-        {title}
-      </h2>
+      <h2 className="mt-3 text-sm font-bold text-white">{title}</h2>
 
-      <p className="mt-1 text-xs leading-5 text-white/35">
-        {text}
-      </p>
+      <p className="mt-1 text-xs leading-5 text-white/35">{text}</p>
     </article>
   );
 }
@@ -611,13 +789,115 @@ function DetailCard({
         {icon}
       </div>
 
-      <h3 className="mt-5 text-base font-black text-white">
-        {title}
-      </h3>
+      <h3 className="mt-5 text-base font-black text-white">{title}</h3>
 
-      <p className="mt-2 text-sm leading-7 text-white/35">
-        {text}
-      </p>
+      <p className="mt-2 text-sm leading-7 text-white/35">{text}</p>
     </article>
+  );
+}
+
+/* =========================================================
+   STEP CARD
+========================================================= */
+
+function StepCard({
+  number,
+  icon,
+  title,
+  text,
+}: {
+  number: string;
+  icon: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <article className="rounded-3xl border border-white/[0.08] bg-white/[0.025] p-6">
+      <div className="flex items-center justify-between">
+        <span className="text-xs font-black tracking-[0.2em] text-white/20">
+          {number}
+        </span>
+
+        <span className="text-2xl">{icon}</span>
+      </div>
+
+      <h3 className="mt-7 text-base font-black text-white">{title}</h3>
+
+      <p className="mt-2 text-sm leading-7 text-white/35">{text}</p>
+    </article>
+  );
+}
+
+/* =========================================================
+   STYLE CARD
+========================================================= */
+
+function StyleCard({
+  icon,
+  title,
+}: {
+  icon: string;
+  title: string;
+}) {
+  return (
+    <div className="flex min-h-[120px] flex-col items-center justify-center rounded-3xl border border-white/[0.08] bg-white/[0.025] text-center transition duration-300 hover:-translate-y-1 hover:border-purple-400/20 hover:bg-white/[0.05]">
+      <div className="text-3xl">{icon}</div>
+
+      <div className="mt-3 text-sm font-bold text-white/70">{title}</div>
+    </div>
+  );
+}
+
+/* =========================================================
+   INFO CARD
+========================================================= */
+
+function InfoCard({
+  icon,
+  title,
+  text,
+}: {
+  icon: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <article className="rounded-3xl border border-white/[0.08] bg-black/25 p-7 text-center">
+      <div className="text-3xl">{icon}</div>
+
+      <h3 className="mt-5 text-base font-black">{title}</h3>
+
+      <p className="mt-3 text-sm leading-7 text-white/35">{text}</p>
+    </article>
+  );
+}
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+function FaqItem({
+  question,
+  answer,
+}: {
+  question: string;
+  answer: string;
+}) {
+  return (
+    <details className="group rounded-2xl border border-white/[0.08] bg-white/[0.025] px-5 py-5 transition hover:border-white/[0.14]">
+      <summary className="cursor-pointer list-none pr-6 text-sm font-bold text-white marker:hidden">
+        <div className="flex items-center justify-between gap-5">
+          <span>{question}</span>
+
+          <span className="text-lg text-white/30 transition-transform duration-300 group-open:rotate-45">
+            +
+          </span>
+        </div>
+      </summary>
+
+      <p className="mt-4 max-w-3xl text-sm leading-7 text-white/40">
+        {answer}
+      </p>
+    </details>
   );
 }
