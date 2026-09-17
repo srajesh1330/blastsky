@@ -41,7 +41,6 @@ type FireworkType =
   | "kamuro"
   | "saturn"
   | "double-ring"
-  | "triple-ring"
   | "burst"
   | "comet"
   | "salute"
@@ -354,7 +353,7 @@ function playFireworksSound(
     audio.pause();
     audio.currentTime = 0;
     audio.volume = volume;
-    void audio.play().catch(() => {});
+    void audio.play().catch(() => { });
   } catch {
     // Ignore playback errors.
   }
@@ -386,7 +385,7 @@ function random(
 ): number {
   return (
     Math.random() *
-      (max - min) +
+    (max - min) +
     min
   );
 }
@@ -477,7 +476,6 @@ function categoryTypes(
       "peony",
       "ring",
       "double-ring",
-      "triple-ring",
       "star",
       "saturn",
       "salute",
@@ -520,7 +518,6 @@ function categoryTypes(
     "kamuro",
     "saturn",
     "double-ring",
-    "triple-ring",
     "burst",
     "comet",
     "salute",
@@ -728,7 +725,7 @@ FULLSCREEN
       () => {
         setIsFullscreen(
           document.fullscreenElement ===
-            containerRef.current
+          containerRef.current
         );
       };
 
@@ -871,9 +868,12 @@ AUDIO
         return;
       }
 
+      // Blast sound mapping:
+      // - Double blast = Boom1
+      // - Single blast = Boom2
       playFireworksSound(
-        special ? "boom2" : "boom1",
-        special ? 0.82 : 0.62
+        special ? "boom1" : "boom2",
+        special ? 0.72 : 0.82
       );
     };
 
@@ -895,7 +895,7 @@ AUDIO
       const limit =
         Math.floor(
           MAX_PARTICLES *
-            qualityRef.current
+          qualityRef.current
         );
 
       if (
@@ -951,10 +951,10 @@ AUDIO
         hue:
           normalizeHue(
             hue +
-              random(
-                -7,
-                7
-              )
+            random(
+              -7,
+              7
+            )
           ),
 
         alpha: 1,
@@ -1062,7 +1062,7 @@ REALISTIC PEONY
       ) {
         const angle =
           (Math.PI * 2 * i) /
-            count +
+          count +
           random(
             -0.035,
             0.035
@@ -1084,10 +1084,10 @@ REALISTIC PEONY
           angle,
           speed,
           hue +
-            random(
-              -10,
-              22
-            ),
+          random(
+            -10,
+            22
+          ),
           {
             maxLife: random(
               70,
@@ -1194,8 +1194,8 @@ CHRYSANTHEMUM
           angle,
           speed,
           hue +
-            Math.sin(i * 0.4) *
-              20,
+          Math.sin(i * 0.4) *
+          20,
           {
             maxLife: random(
               85,
@@ -1252,12 +1252,12 @@ RING
             y,
             angle,
             2.9 +
-              r *
-                0.8 +
-              random(
-                -0.15,
-                0.15
-              ),
+            r *
+            0.8 +
+            random(
+              -0.15,
+              0.15
+            ),
             ringHue,
             {
               maxLife: random(
@@ -1298,7 +1298,7 @@ WILLOW
       ) {
         const angle =
           (Math.PI * 2 * i) /
-            count +
+          count +
           random(
             -0.08,
             0.08
@@ -1313,10 +1313,10 @@ WILLOW
             4.0
           ),
           hue +
-            random(
-              -5,
-              10
-            ),
+          random(
+            -5,
+            10
+          ),
           {
             maxLife: random(
               105,
@@ -1366,7 +1366,7 @@ PALM
         const angle =
           -Math.PI / 2 +
           (Math.PI * 2 * arm) /
-            arms;
+          arms;
 
         const count =
           particleCount(22);
@@ -1383,18 +1383,18 @@ PALM
             x,
             y,
             angle +
-              random(
-                -0.06,
-                0.06
-              ),
+            random(
+              -0.06,
+              0.06
+            ),
             2.2 +
-              progress *
-                2.5,
+            progress *
+            2.5,
             hue +
-              random(
-                -8,
-                12
-              ),
+            random(
+              -8,
+              12
+            ),
             {
               maxLife: random(
                 100,
@@ -1445,11 +1445,11 @@ SPIRAL
           y,
           angle,
           1.5 +
-            progress *
-              3.7,
+          progress *
+          3.7,
           hue +
-            progress *
-              190,
+          progress *
+          190,
           {
             maxLife: random(
               75,
@@ -1489,7 +1489,7 @@ STAR
         const angle =
           -Math.PI / 2 +
           (Math.PI * 2 * arm) /
-            arms;
+          arms;
 
         const count =
           particleCount(22);
@@ -1503,17 +1503,17 @@ STAR
             x,
             y,
             angle +
-              random(
-                -0.035,
-                0.035
-              ),
+            random(
+              -0.035,
+              0.035
+            ),
             random(
               2.6,
               5.0
             ),
             hue +
-              arm *
-                18,
+            arm *
+            18,
             {
               maxLife: random(
                 75,
@@ -1563,10 +1563,10 @@ GLITTER
             4.8
           ),
           hue +
-            random(
-              -45,
-              80
-            ),
+          random(
+            -45,
+            80
+          ),
           {
             maxLife: random(
               60,
@@ -1615,10 +1615,10 @@ CRACKLE
             5.0
           ),
           hue +
-            random(
-              -40,
-              90
-            ),
+          random(
+            -40,
+            90
+          ),
           {
             maxLife: random(
               35,
@@ -1671,10 +1671,10 @@ CROSSETTE
             x,
             y,
             angle +
-              random(
-                -0.02,
-                0.02
-              ),
+            random(
+              -0.02,
+              0.02
+            ),
             random(
               2.5,
               4.8
@@ -1828,10 +1828,10 @@ DAHLIA
             5.3
           ),
           hue +
-            random(
-              -18,
-              30
-            ),
+          random(
+            -18,
+            30
+          ),
           {
             maxLife: random(
               70,
@@ -1882,10 +1882,10 @@ KAMURO
             4.1
           ),
           42 +
-            random(
-              -6,
-              7
-            ),
+          random(
+            -6,
+            7
+          ),
           {
             maxLife: random(
               130,
@@ -2163,10 +2163,10 @@ SECONDARY BURSTS
                 "burst",
                 "star",
               ][
-                randomInt(
-                  0,
-                  3
-                )
+              randomInt(
+                0,
+                3
+              )
               ] as FireworkType,
 
             radius: random(
@@ -2183,43 +2183,27 @@ EXPLOSION
 =========================================================
 */
 
-    const explode = (
-      rocket: Rocket
+    const renderExplosion = (
+      x: number,
+      y: number,
+      hue: number,
+      special: boolean,
+      selectedType: FireworkType
     ) => {
-      const x =
-        rocket.x;
+      let type = selectedType;
 
-      const y =
-        rocket.y;
-
-      const hue =
-        rocket.hue;
-
-      const special =
-        rocket.special;
-
-      playExplosionSound(
-        special
-      );
-
-      let type =
-        rocket.style;
-
-      if (
-        type === "random"
-      ) {
+      if (type === "random") {
         const types =
           categoryTypes(
-            settingsRef.current
-              .category
+            settingsRef.current.category
           );
 
         type =
           types[
-            randomInt(
-              0,
-              types.length - 1
-            )
+          randomInt(
+            0,
+            types.length - 1
+          )
           ];
       }
 
@@ -2362,15 +2346,6 @@ EXPLOSION
           );
           break;
 
-        case "triple-ring":
-          ring(
-            x,
-            y,
-            hue,
-            3
-          );
-          break;
-
         case "burst":
           burst(
             x,
@@ -2414,7 +2389,6 @@ EXPLOSION
             y,
             hue + 70
           );
-
           break;
 
         case "finale":
@@ -2437,7 +2411,6 @@ EXPLOSION
             y,
             hue + 150
           );
-
           break;
 
         default:
@@ -2450,23 +2423,20 @@ EXPLOSION
       }
 
       /*
-       * Real fireworks often have
-       * smaller secondary stars.
+       * Smaller secondary stars make the burst feel
+       * more natural without creating another sound.
        */
-
       if (
         special ||
-        type ===
-          "multi-break" ||
-        type ===
-          "finale"
+        type === "multi-break" ||
+        type === "finale"
       ) {
         const amount =
           Math.min(
-            3,
+            2,
             Math.floor(
               qualityRef.current *
-                3
+              2
             )
           );
 
@@ -2478,10 +2448,107 @@ EXPLOSION
           addSecondary(
             x,
             y,
-            hue
+            hue +
+            random(
+              -25,
+              25
+            )
           );
         }
       }
+    };
+
+    const explode = (
+      rocket: Rocket
+    ) => {
+      const x = rocket.x;
+      const y = rocket.y;
+      const hue = rocket.hue;
+      const special = rocket.special;
+
+      /*
+       * SOUND RULE
+       * ---------------------------------------------------
+       * special=true  -> DOUBLE blast -> Boom1.mp3
+       * special=false -> SINGLE blast -> Boom2.mp3
+       *
+       * A double blast means:
+       *   blast once
+       *   then blast once again
+       *
+       * Boom1 plays once for the complete double-blast
+       * sequence so the sound does not overlap.
+       */
+      playExplosionSound(
+        special
+      );
+
+      const type =
+        rocket.style;
+
+      if (!special) {
+        // ONE visual blast + Boom2.
+        renderExplosion(
+          x,
+          y,
+          hue,
+          false,
+          type
+        );
+        return;
+      }
+
+      /*
+       * DOUBLE BLAST
+       * ---------------------------------------------------
+       * First explosion happens immediately.
+       * Second explosion happens shortly afterwards.
+       * Only TWO explosions are created.
+       */
+
+      renderExplosion(
+        x,
+        y,
+        hue,
+        true,
+        type
+      );
+
+      window.setTimeout(
+        () => {
+          if (stopped) {
+            return;
+          }
+
+          /*
+           * Keep the second burst close to the first so it
+           * looks like one firework breaking twice rather
+           * than two unrelated rockets.
+           */
+          const secondX =
+            x + random(
+              -Math.min(45, width * 0.035),
+              Math.min(45, width * 0.035)
+            );
+
+          const secondY =
+            y + random(
+              -24,
+              18
+            );
+
+          renderExplosion(
+            secondX,
+            secondY,
+            normalizeHue(
+              hue + random(18, 42)
+            ),
+            true,
+            type
+          );
+        },
+        180
+      );
     };
 
     /*
@@ -2548,7 +2615,7 @@ ROCKET LAUNCH
       const distance =
         Math.sqrt(
           dx * dx +
-            dy * dy
+          dy * dy
         );
 
       const baseSpeed =
@@ -2558,44 +2625,44 @@ ROCKET LAUNCH
         );
 
       const rocket: Rocket =
-        {
-          x: startX,
+      {
+        x: startX,
 
-          y: startY,
+        y: startY,
 
-          vx:
-            (dx / distance) *
-            baseSpeed,
+        vx:
+          (dx / distance) *
+          baseSpeed,
 
-          vy:
-            (dy / distance) *
-            baseSpeed,
+        vy:
+          (dy / distance) *
+          baseSpeed,
 
-          targetX:
-            safeTargetX,
+        targetX:
+          safeTargetX,
 
-          targetY:
-            safeTargetY,
+        targetY:
+          safeTargetY,
 
-          hue:
-            getHue(),
+        hue:
+          getHue(),
 
-          trail: [],
+        trail: [],
 
-          special,
+        special,
 
-          category:
-            settingsRef.current
-              .category,
+        category:
+          settingsRef.current
+            .category,
 
-          age: 0,
+        age: 0,
 
-          maxAge: 150,
+        maxAge: 150,
 
-          style:
-            settingsRef.current
-              .type,
-        };
+        style:
+          settingsRef.current
+            .type,
+      };
 
       rocketsRef.current.push(
         rocket
@@ -2704,7 +2771,7 @@ POINTER
 
         if (
           event.pointerType ===
-            "mouse" &&
+          "mouse" &&
           event.button !== 0
         ) {
           return;
@@ -2728,10 +2795,10 @@ POINTER
 
         manualLaunch(
           event.clientX -
-            rect.left,
+          rect.left,
 
           event.clientY -
-            rect.top,
+          rect.top,
 
           performance.now()
         );
@@ -2911,16 +2978,16 @@ BACKGROUND
           0.65 +
           Math.sin(
             now *
-              0.001 +
-              star.phase
+            0.001 +
+            star.phase
           ) *
-            0.25;
+          0.25;
 
         ctx.globalAlpha =
           Math.max(
             0.05,
             star.alpha *
-              twinkle
+            twinkle
           );
 
         ctx.fillStyle =
@@ -2950,7 +3017,7 @@ BACKGROUND
           building.x,
 
           height -
-            building.height,
+          building.height,
 
           building.width,
 
@@ -2969,7 +3036,7 @@ BACKGROUND
             1,
             Math.floor(
               building.width /
-                14
+              14
             )
           );
 
@@ -2978,7 +3045,7 @@ BACKGROUND
             1,
             Math.floor(
               building.height /
-                17
+              17
             )
           );
 
@@ -2998,15 +3065,15 @@ BACKGROUND
             ) {
               ctx.fillRect(
                 building.x +
-                  5 +
-                  col *
-                    12,
+                5 +
+                col *
+                12,
 
                 height -
-                  building.height +
-                  8 +
-                  row *
-                    16,
+                building.height +
+                8 +
+                row *
+                16,
 
                 3,
 
@@ -3048,8 +3115,8 @@ ROCKET DRAW
           point.alpha *
           (1 -
             i /
-              rocket.trail
-                .length);
+            rocket.trail
+              .length);
 
         ctx.globalAlpha =
           alpha *
@@ -3173,9 +3240,9 @@ PARTICLE DRAW
             Math.abs(
               p.vx
             ) +
-              Math.abs(
-                p.vy
-              )
+            Math.abs(
+              p.vy
+            )
           )
         );
 
@@ -3190,7 +3257,7 @@ PARTICLE DRAW
         Math.max(
           0.45,
           p.size *
-            0.7
+          0.7
         );
 
       ctx.beginPath();
@@ -3202,14 +3269,14 @@ PARTICLE DRAW
 
       ctx.lineTo(
         p.x -
-          p.vx *
-            trailLength *
-            0.18,
+        p.vx *
+        trailLength *
+        0.18,
 
         p.y -
-          p.vy *
-            trailLength *
-            0.18
+        p.vy *
+        trailLength *
+        0.18
       );
 
       ctx.stroke();
@@ -3235,7 +3302,7 @@ PARTICLE DRAW
           p.x,
           p.y,
           p.size *
-            3.2,
+          3.2,
           0,
           Math.PI * 2
         );
@@ -3259,7 +3326,7 @@ PARTICLE DRAW
         p.x,
         p.y,
         p.size *
-          0.55,
+        0.55,
         0,
         Math.PI * 2
       );
@@ -3296,8 +3363,8 @@ PARTICLE DRAW
       if (
         p.style === 3 &&
         Math.random() <
-          0.09 *
-            p.twinkle
+        0.09 *
+        p.twinkle
       ) {
         ctx.globalAlpha =
           p.alpha;
@@ -3380,9 +3447,9 @@ ANIMATION
 
         fpsRef.current =
           fpsRef.current *
-            0.92 +
+          0.92 +
           instantFPS *
-            0.08;
+          0.08;
       }
 
       /*
@@ -3398,19 +3465,19 @@ ANIMATION
           Math.max(
             0.48,
             qualityRef.current -
-              0.025
+            0.025
           );
       } else if (
         fpsRef.current >
-          53 &&
+        53 &&
         qualityRef.current <
-          1
+        1
       ) {
         qualityRef.current =
           Math.min(
             1,
             qualityRef.current +
-              0.008
+            0.008
           );
       }
 
@@ -3476,7 +3543,7 @@ ANIMATION
       const delta =
         Math.min(
           now -
-            lastTimeRef.current,
+          lastTimeRef.current,
           28
         );
 
@@ -3499,8 +3566,8 @@ ANIMATION
         1250;
 
       switch (
-        settingsRef.current
-          .intensity
+      settingsRef.current
+        .intensity
       ) {
         case "low":
           autoDelay = 1650;
@@ -3533,8 +3600,8 @@ ANIMATION
       if (
         mode === "auto" &&
         now -
-          lastLaunchRef.current >=
-          autoDelay
+        lastLaunchRef.current >=
+        autoDelay
       ) {
         autoLaunch(now);
 
@@ -3586,7 +3653,7 @@ ROCKET PHYSICS
 
         for (
           const trail of
-            rocket.trail
+          rocket.trail
         ) {
           trail.alpha *=
             0.84;
@@ -3614,7 +3681,7 @@ ROCKET PHYSICS
         const distance =
           Math.sqrt(
             dx * dx +
-              dy * dy
+            dy * dy
           );
 
         if (
@@ -3677,9 +3744,9 @@ ROCKET PHYSICS
 
         const nearApex =
           movingUp ===
-            false &&
+          false &&
           distance <
-            55;
+          55;
 
         const tooOld =
           rocket.age >
@@ -3851,9 +3918,9 @@ PARTICLE PHYSICS
         p.vx +=
           Math.sin(
             p.life *
-              0.025 +
-              p.x *
-                0.002
+            0.025 +
+            p.x *
+            0.002
           ) *
           0.003 *
           dt;
@@ -3891,7 +3958,7 @@ PARTICLE PHYSICS
         p.alpha =
           Math.pow(
             1 -
-              progress,
+            progress,
             0.72
           );
 
@@ -4031,7 +4098,7 @@ RETURN
 
           <span className="text-xs font-bold uppercase text-white/60">
             {mode ===
-            "auto"
+              "auto"
               ? `${duration} MIN`
               : "MANUAL"}
           </span>
@@ -4154,9 +4221,6 @@ RETURN
                   💫 Double Ring
                 </option>
 
-                <option value="triple-ring">
-                  🌟 Triple Ring
-                </option>
 
                 <option value="willow">
                   🌿 Willow
@@ -4448,11 +4512,10 @@ RETURN
                     !value
                 )
               }
-              className={`w-full rounded-lg border px-3 py-2 text-xs font-bold transition ${
-                finale
+              className={`w-full rounded-lg border px-3 py-2 text-xs font-bold transition ${finale
                   ? "border-yellow-400/50 bg-yellow-400/15 text-yellow-300"
                   : "border-white/15 bg-black/60 text-white"
-              }`}
+                }`}
             >
               {finale
                 ? "🔥 Finale Mode ON"
@@ -4483,7 +4546,7 @@ RETURN
       <div className="pointer-events-none absolute bottom-24 left-1/2 z-20 -translate-x-1/2">
         <div className="whitespace-nowrap rounded-full border border-white/10 bg-black/70 px-5 py-2.5 text-xs font-medium text-white/80 shadow-xl backdrop-blur-md">
           {mode ===
-          "manual"
+            "manual"
             ? "👆 Click or tap anywhere to launch"
             : `🎆 Automatic fireworks show • ${duration} minutes`}
         </div>
