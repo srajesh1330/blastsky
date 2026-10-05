@@ -1,159 +1,32 @@
-@import "tailwindcss";
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #01020a; color: #e7ecf5; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.stage { position: relative; width: 100%; height: 100svh; overflow: hidden; touch-action: manipulation; cursor: crosshair; }
+.layer { position: absolute; inset: 0; width: 100%; height: 100%; }
+.overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 24px; background: rgba(1, 2, 10, 0.55); backdrop-filter: blur(2px); }
+.overlay h1 { margin: 0; font-size: clamp(40px, 9vw, 84px); letter-spacing: 2px; }
+.overlay p { margin: 0; max-width: 460px; color: #b9c4dc; }
+button { font: inherit; color: inherit; cursor: pointer; }
+.primary { background: #ff9d2e; color: #1a0f00; border: 0; border-radius: 999px; padding: 14px 30px; font-weight: 700; font-size: 18px; }
+.panel { position: absolute; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; width: min(94vw, 640px); padding: 10px 12px; background: rgba(8, 14, 34, 0.78); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px; cursor: default; backdrop-filter: blur(6px); }
+.panel button, .panel select { background: rgba(255, 255, 255, 0.09); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 8px; padding: 8px 12px; color: #fff; }
+.panel select option { color: #000; }
+.panel label { display: flex; flex-direction: column; gap: 3px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #9fb0d0; }
+.panel input[type="range"] { accent-color: #ff9d2e; }
+.fs { position: absolute; z-index: 5; top: calc(12px + env(safe-area-inset-top, 0px)); right: 12px; background: rgba(8, 14, 34, 0.7); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; padding: 8px 14px; color: #fff; font-size: 14px; backdrop-filter: blur(6px); }
+.fsnote { position: absolute; z-index: 5; top: calc(56px + env(safe-area-inset-top, 0px)); right: 12px; max-width: 260px; padding: 8px 12px; font-size: 12px; background: rgba(8, 14, 34, 0.85); border-radius: 10px; color: #cbd6ee; }
+.hint { width: 100%; text-align: center; font-size: 12px; color: #8ea0c4; }
+.doc { max-width: 760px; margin: 0 auto; padding: 32px 18px 48px; line-height: 1.65; }
+.doc h1, .doc h2 { line-height: 1.2; }
+.doc a { color: #ffb45c; }
+.back { display: inline-block; margin-bottom: 12px; }
+.links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; font-size: 14px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
-:root {
-  --background: #03030b;
-  --foreground: #ffffff;
-}
+.pill { position: absolute; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: rgba(8, 14, 34, 0.78); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; padding: 10px 20px; color: #fff; font-size: 15px; backdrop-filter: blur(6px); z-index: 5; }
+.panel .hide { width: 100%; padding: 4px 8px; font-size: 12px; }
+@media (max-width: 700px) { .panel { gap: 6px; padding: 8px; } .panel button, .panel select { padding: 6px 10px; font-size: 13px; } .panel label { flex: 1 1 120px; } }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  background: #03030b;
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(
-      circle at 50% -10%,
-      rgba(124, 58, 237, 0.12),
-      transparent 35%
-    ),
-    #03030b;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-}
-
-button {
-  -webkit-tap-highlight-color: transparent;
-  cursor: pointer;
-}
-
-button:disabled {
-  cursor: not-allowed;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-a:focus-visible,
-button:focus-visible,
-select:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid rgba(192, 132, 252, 0.95);
-  outline-offset: 3px;
-}
-
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* =========================================================
-   BUTTON VISIBILITY FIX
-   ========================================================= */
-
-/*
- * White buttons must always have dark text.
- * This fixes buttons that accidentally inherit white text.
- */
-
-button.bg-white,
-a.bg-white {
-  color: #000000;
-}
-
-/*
- * Explicit text utilities still work normally.
- */
-
-button.text-white,
-a.text-white {
-  color: #ffffff;
-}
-
-button.text-black,
-a.text-black {
-  color: #000000;
-}
-
-/*
- * Disabled buttons
- */
-
-button:disabled {
-  opacity: 0.7;
-}
-
-/* =========================================================
-   SELECT FIX
-   ========================================================= */
-
-select {
-  color: #ffffff;
-  background-color: #090912;
-}
-
-select option {
-  color: #ffffff;
-  background-color: #090912;
-}
-
-/* =========================================================
-   MOBILE TOUCH
-   ========================================================= */
-
-@media (max-width: 640px) {
-  body {
-    font-size: 15px;
-  }
-
-  button {
-    min-height: 44px;
-  }
-}
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-::selection {
-  background: rgba(168, 85, 247, 0.35);
-  color: #ffffff;
-}
+.write { display: flex; flex-wrap: wrap; gap: 6px; width: 100%; }
+.write input { flex: 1 1 180px; min-width: 0; background: rgba(255, 255, 255, 0.09); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 8px; padding: 8px 12px; color: #fff; font: inherit; }
+.write input::placeholder { color: #8ea0c4; }
+.panel button:disabled { opacity: 0.45; cursor: default; }
