@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import Consent from "../components/Consent";
 
-export const SITE = "https://blastsky.vercel.app";
+const SITE = "https://blastsky.vercel.app";
 
 // Google Analytics 4 measurement ID (can be overridden with NEXT_PUBLIC_GA_ID).
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-4YDBQ7GB5Z";
