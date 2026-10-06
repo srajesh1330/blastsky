@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { CookieSettings } from "./Consent";
 
 export default function LegalPage({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function LegalPage({ title, children }: { title: string; children
         <Link href="/contact">Contact</Link>
         <Link href="/privacy">Privacy</Link>
         <Link href="/terms">Terms</Link>
+        <CookieSettings />
       </nav>
     </main>
   );

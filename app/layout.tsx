@@ -1,8 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
+import Consent from "../components/Consent";
 
-const SITE = "https://blastsky.vercel.app";
+export const SITE = "https://blastsky.vercel.app";
+
+// Google Analytics 4 measurement ID (can be overridden with NEXT_PUBLIC_GA_ID).
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-4YDBQ7GB5Z";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -23,10 +27,23 @@ export const viewport: Viewport = { themeColor: "#01020a", width: "device-width"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  // Only count real visits: not local testing and not Vercel preview deployments.
+  const gaOn =
+    process.env.NODE_ENV === "production" &&
+    (process.env.VERCEL_ENV ? process.env.VERCEL_ENV === "production" : true);
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
+        {gaOn ? (
+          <>
+            <Script id="ga-init" strategy="beforeInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','${GA_ID}');`}
+            </Script>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+          </>
+        ) : null}
         {children}
+        <Consent />
         {client ? (
           <Script
             async

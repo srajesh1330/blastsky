@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FireworksShow from "../components/FireworksShow";
 import AdSlot from "../components/AdSlot";
+import { CookieSettings } from "../components/Consent";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
           <Link href="/contact">Contact</Link>
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
+          <CookieSettings />
         </nav>
       </section>
     </>
