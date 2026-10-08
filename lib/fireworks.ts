@@ -449,7 +449,7 @@ export class FireworksEngine {
   launch(x?: number, y?: number, kind?: ShellKind) {
     const tx = x ?? rand(this.w * 0.12, this.w * 0.88);
     const ty = Math.min(this.h * 0.8, y ?? rand(this.h * 0.12, this.h * 0.5));
-    const x0 = Math.max(20, Math.min(this.w - 20, tx + rand(-120, 120)));
+    const x0 = Math.max(20, Math.min(this.w - 20, tx + rand(-45, 45)));
     this.rockets.push({
       x0,
       y0: this.h * 0.97,
@@ -458,7 +458,7 @@ export class FireworksEngine {
       t: 0,
       T: this.flightTime(ty),
       kind: kind ?? pickKind(),
-      sway: rand(-14, 14),
+      sway: rand(-5, 5),
       px: x0,
       py: this.h * 0.97,
       lx: x0,
@@ -525,8 +525,8 @@ export class FireworksEngine {
       const r = this.rockets[i];
       r.t += dt;
       const { f, x, y } = this.rocketPos(r);
-      // Comet tail: gold sparks are shed along the whole path travelled this frame,
-      // so the trail is one continuous thin streak instead of separate dots.
+      // A real shell is a dark object. What you see is a thin hot streak at the front and a
+      // shower of small orange sparks that fall away behind it.
       r.ht += dt;
       if (r.ht >= 0.025) {
         r.ht = 0;
@@ -541,16 +541,16 @@ export class FireworksEngine {
         this.sparks.push({
           x: r.lx + (x - r.lx) * u,
           y: r.ly + (y - r.ly) * u,
-          vx: rand(-16, 16) * this.s,
-          vy: rand(8, 45) * this.s,
+          vx: rand(-24, 24) * this.s,
+          vy: rand(6, 40) * this.s,
           age: 0,
-          life: rand(0.35, 1.0),
+          life: rand(0.5, 1.35),
           h: 44,
-          h2: 14,
-          size: rand(0.9, 1.5),
+          h2: 12,
+          size: rand(0.8, 1.7),
           drag: 0.93,
           g: 60 * this.s,
-          glitter: Math.random() < 0.45,
+          glitter: Math.random() < 0.55,
           trail: 0,
           dust: true,
           sat: 100,
@@ -769,42 +769,40 @@ export class FireworksEngine {
     }
 
     ctx.lineCap = "round";
-    ctx.lineJoin = "round";
     for (const r of this.rockets) {
-      // The whole climb stays visible from the ground: a thread that is thin and faint
-      // at the bottom and thick and bright at the shell.
+      // Thin hot streak: only the last quarter second of travel, fading toward the back.
       const pts = r.hist;
+      let k = pts.length / 3 - 1;
+      const minT = r.t - 0.25;
+      while (k > 0 && pts[k * 3 + 2] >= minT) k--;
+      const seg = Math.max(0, k);
       const n = pts.length / 3;
-      const TIERS = 5;
-      for (let tier = 0; tier < TIERS; tier++) {
-        const i0 = Math.floor((tier / TIERS) * n);
-        const i1 = Math.min(n, Math.ceil(((tier + 1) / TIERS) * n) + 1);
-        const last = tier === TIERS - 1;
+      for (let q = 0; q < 3; q++) {
+        const i0 = seg + Math.floor(((n - seg) * q) / 3);
+        const i1 = Math.min(n, seg + Math.ceil(((n - seg) * (q + 1)) / 3) + 1);
+        const last = q === 2;
         if (i1 - i0 < 2 && !last) continue;
-        const u = (tier + 1) / TIERS;
-        ctx.strokeStyle = `hsla(${40 + u * 8},100%,${68 + u * 24}%,${0.05 + 0.45 * u * u})`;
-        ctx.lineWidth = 1 + 2.8 * u;
+        const u = (q + 1) / 3;
+        ctx.strokeStyle = `hsla(40,100%,${70 + u * 20}%,${0.12 + 0.4 * u * u})`;
+        ctx.lineWidth = 0.8 + 0.9 * u;
         ctx.beginPath();
-        ctx.moveTo(pts[Math.min(i0, n - 1) * 3], pts[Math.min(i0, n - 1) * 3 + 1]);
-        for (let k = i0 + 1; k < i1; k++) ctx.lineTo(pts[k * 3], pts[k * 3 + 1]);
+        const a = Math.min(i0, n - 1);
+        ctx.moveTo(pts[a * 3], pts[a * 3 + 1]);
+        for (let m = i0 + 1; m < i1; m++) ctx.lineTo(pts[m * 3], pts[m * 3 + 1]);
         if (last) ctx.lineTo(r.px, r.py);
         ctx.stroke();
       }
 
-      // Thick shell: soft glow and a bright core.
-      ctx.strokeStyle = "hsla(38,100%,60%,0.28)";
-      ctx.lineWidth = 9;
+      // Small flickering hot spot at the head, like a burning fuse.
+      const flick = 0.75 + Math.random() * 0.25;
+      ctx.fillStyle = `hsla(40,100%,60%,${0.16 * flick})`;
       ctx.beginPath();
-      ctx.moveTo(r.lx, r.ly);
-      ctx.lineTo(r.px, r.py);
-      ctx.stroke();
-
-      ctx.strokeStyle = `hsla(46,100%,${90 + Math.random() * 7}%,0.98)`;
-      ctx.lineWidth = 3.6;
+      ctx.arc(r.px, r.py, 5.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = `hsla(46,100%,93%,${0.95 * flick})`;
       ctx.beginPath();
-      ctx.moveTo(r.lx, r.ly);
-      ctx.lineTo(r.px, r.py);
-      ctx.stroke();
+      ctx.arc(r.px, r.py, 1.5 + Math.random() * 0.8, 0, Math.PI * 2);
+      ctx.fill();
     }
     ctx.globalCompositeOperation = "source-over";
   }
