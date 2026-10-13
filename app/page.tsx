@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FireworksShow from "../components/FireworksShow";
 import AdSlot from "../components/AdSlot";
+import { ARTICLES } from "../lib/articles";
 import { CookieSettings } from "../components/Consent";
 
 export default function Home() {
@@ -25,8 +26,17 @@ export default function Home() {
           Press Start, then tap or click anywhere in the sky to launch a shell there. Use Finale for a
           rapid barrage, switch the automatic show on or off, and set the volume to suit you.
         </p>
+        <h2>Fireworks guides</h2>
+        <ul>
+          {ARTICLES.map((a) => (
+            <li key={a.slug}>
+              <Link href={`/guides/${a.slug}`}>{a.title}</Link>
+            </li>
+          ))}
+        </ul>
         <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOME} />
         <nav className="links">
+          <Link href="/guides">Guides</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/privacy">Privacy</Link>

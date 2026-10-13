@@ -9,6 +9,7 @@ export default function LegalPage({ title, children }: { title: string; children
       <h1>{title}</h1>
       {children}
       <nav className="links">
+        <Link href="/guides">Guides</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
         <Link href="/privacy">Privacy</Link>

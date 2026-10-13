@@ -38,3 +38,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .consent-row { display: flex; gap: 8px; margin-top: 10px; }
 .consent-row button { flex: 1; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 8px; padding: 10px; background: transparent; color: #fff; font-weight: 700; cursor: pointer; }
 .consent-row button.yes { background: #ff9d2e; color: #1a0f00; border-color: #ff9d2e; }
+
+.doc ul { padding-left: 1.2em; }
+.doc li { margin: 6px 0; }
+.meta { color: #8ea0c4; font-size: 13px; }
+.guide-list { list-style: none; padding-left: 0; }
+.guide-list li { margin: 18px 0; }
+.guide-list li > a { font-size: 18px; font-weight: 700; }
+.guide-list p { margin: 4px 0 0; color: #b9c4dc; }
