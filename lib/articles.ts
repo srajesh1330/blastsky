@@ -366,6 +366,69 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    slug: "host-a-virtual-fireworks-display",
+    title: "How to Host a Virtual Fireworks Display at Home or at a Party",
+    description:
+      "Step-by-step ideas for running a virtual fireworks display: setting up the screen and sound, planning a short programme with a countdown, and fun ways to celebrate New Year, Diwali, birthdays and more without real fireworks.",
+    date: "2026-10-13",
+    blocks: [
+      {
+        p: [
+          "A virtual fireworks display gives you the excitement of a show with none of the risk, smoke or noise complaints. It works for a quiet family evening, a birthday, a New Year's Eve gathering or a call with relatives who live far away. Here is how to set one up with a free fireworks simulator such as BlastSky.",
+        ],
+      },
+      {
+        h: "What you need",
+        list: [
+          "A screen: the bigger the better. A laptop works, and a TV is even better.",
+          "Speakers: the booming sound is half the fun, so use speakers or a sound bar if you can.",
+          "A dark room: close the curtains or dim the lights so the bursts stand out.",
+          "A web browser and an internet connection. There is nothing to download or install.",
+        ],
+      },
+      {
+        h: "Getting it onto the big screen",
+        p: [
+          "You can connect a laptop to a television with an HDMI cable, or use your browser's cast option if your television supports it. Once it is on the screen, use the Full screen button so the sky fills the display. Before your guests arrive, press Start once and check that the sound plays at a comfortable volume.",
+        ],
+      },
+      {
+        h: "Plan a short programme",
+        p: [
+          "A good show has a beginning, a build-up and a finale. Here is a simple plan that takes about ten minutes:",
+        ],
+        list: [
+          "Start with the Today's show button for a ready-made show that builds up slowly.",
+          "Let everyone take a turn tapping the sky to launch a shell of their choice, using the Tap shell menu to pick a type.",
+          "For a special moment, type a message such as a name or a wish and press Write in sky.",
+          "Finish with the Finale or the Grand show, which ends with a big barrage.",
+        ],
+      },
+      {
+        h: "Ideas for different occasions",
+        list: [
+          "New Year's Eve: choose the New Year theme and use the Countdown button, which counts from ten and ends with a message and a finale.",
+          "Diwali: pick the Diwali gold theme for warm golden bursts.",
+          "Birthdays: write the birthday person's name in the sky, and save a photo of it.",
+          "Long-distance celebrations: use Share greeting to send a link, so a friend sees your message written in their own sky.",
+          "Children's parties: let each child choose a shell type and see who can find the biggest burst.",
+        ],
+      },
+      {
+        h: "Tips for children and pets",
+        p: [
+          "A virtual show is much gentler than real fireworks, but the booms can still surprise young children and some pets. Turn the volume down a little at first, sit close to the children, and keep pets in a calm room if loud noises upset them.",
+        ],
+      },
+      {
+        h: "A safe alternative",
+        p: [
+          "If fireworks are not allowed where you live, or the weather is bad, or you simply do not want the risks, a virtual display is a good alternative. For real fireworks, the safest choice is always a public show run by trained professionals. Our guide to fireworks safety has more tips.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {

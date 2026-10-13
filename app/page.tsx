@@ -9,9 +9,10 @@ export default function Home() {
     <>
       <FireworksShow />
       <section className="doc">
-        <h2>About this fireworks show</h2>
+        <h2>About this fireworks simulator</h2>
         <p>
-          BlastSky simulates real firework shells. Each rocket climbs with a glowing tail, then bursts
+          BlastSky is a free, interactive fireworks simulator that runs in your browser on phones, tablets and
+          computers, so you can enjoy a virtual fireworks display anywhere. It simulates real firework shells. Each rocket climbs with a glowing tail, then bursts
           into hundreds of sparks that fly outward, slow down in the air, cool from white-hot to
           colour to a dim ember, and fall under gravity.
         </p>
