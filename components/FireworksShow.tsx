@@ -302,7 +302,7 @@ export default function FireworksShow() {
       {!started && (
         <div className="overlay">
           <h1>BlastSky</h1>
-          <p>A realistic fireworks show in your browser. Turn your sound on.</p>
+          <p>Free online fireworks simulator: a realistic virtual fireworks display in your browser. Turn your sound on.</p>
           <button className="primary" onClick={start}>
             ▶ Start the show
           </button>

@@ -1,2 +1,2 @@
-# After AdSense approval, replace with the line Google gives you:
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# Replace pub-0000000000000000 with your own publisher ID (the number after "ca-pub-"), then remove the "#" at the start of the line.
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
