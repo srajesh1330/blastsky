@@ -3,13 +3,17 @@ import Script from "next/script";
 import "./globals.css";
 import Consent from "../components/Consent";
 
-export const SITE = "https://blastsky.vercel.app";
+const SITE = "https://blastsky.vercel.app";
 
 // Google Analytics 4 measurement ID (can be overridden with NEXT_PUBLIC_GA_ID).
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-4YDBQ7GB5Z";
 
+// Lets Google AdSense verify ownership through the page head (set NEXT_PUBLIC_ADSENSE_CLIENT in Vercel).
+const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
+  other: ADSENSE_CLIENT ? { "google-adsense-account": ADSENSE_CLIENT } : undefined,
   title: { default: "Fireworks Simulator Online Free – Virtual Fireworks | BlastSky", template: "%s | BlastSky" },
   description:
     "BlastSky is a free online fireworks simulator. Watch a realistic virtual fireworks display with booming sound, tap the sky to launch your own shells, or start a countdown. Works on phones and computers, no download.",

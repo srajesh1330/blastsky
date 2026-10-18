@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import LegalPage from "../../../components/LegalPage";
+import AdSlot from "../../../components/AdSlot";
 import { ARTICLES, getArticle } from "../../../lib/articles";
 
 const SITE = "https://blastsky.vercel.app";
@@ -58,6 +59,7 @@ export default async function GuideArticle({ params }: { params: Promise<{ slug:
           ) : null}
         </section>
       ))}
+      <AdSlot slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE} />
       <h2>More guides</h2>
       <ul>
         {others.map((a) => (

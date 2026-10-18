@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Contact", alternates: { canonical: "
 export default function Page() {
   return (
     <LegalPage title="Contact">
-      <p>Questions, feedback or bug reports are welcome. Email us at <strong>your-email@example.com</strong> and we will reply as soon as we can.</p>
+      <p>Questions, feedback or bug reports are welcome. Our contact email address is coming soon, so please check back shortly.</p>
     </LegalPage>
   );
 }
