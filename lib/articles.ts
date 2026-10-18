@@ -429,6 +429,257 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    slug: "diwali-fireworks-guide",
+    title: "Diwali and Fireworks: Meaning, Traditions and Greener Ideas",
+    description:
+      "What Diwali celebrates, how families mark the five days of the festival of lights, why fireworks are part of it, and gentler ways to enjoy the celebration, including a virtual fireworks show.",
+    date: "2026-10-18",
+    blocks: [
+      {
+        p: [
+          "Diwali, also called Deepavali, is the festival of lights. It is celebrated by hundreds of millions of people around the world each autumn. The date changes every year because it follows a lunar calendar, but it usually falls between October and November. Homes are filled with lamps, families gather, sweets are shared, and in many places the night sky is lit with fireworks.",
+        ],
+      },
+      {
+        h: "What Diwali celebrates",
+        p: [
+          "Diwali means different things in different communities, but the heart of it is the victory of light over darkness and good over evil. Many Hindus link the festival to the return of Rama to Ayodhya, or to the goddess Lakshmi, who is associated with prosperity. Jains observe the day as a remembrance of Mahavira's liberation. Sikhs mark Bandi Chhor Divas, which remembers the release of Guru Hargobind. Some Buddhist communities in Nepal also take part.",
+        ],
+      },
+      {
+        h: "How families celebrate",
+        list: [
+          "Lighting rows of small oil lamps called diyas, as well as lanterns and electric lights.",
+          "Drawing colourful patterns called rangoli at the door of the home.",
+          "Cleaning and decorating the house, and wearing new clothes.",
+          "Offering prayers, especially on the main evening of the festival.",
+          "Sharing sweets and gifts, and visiting family and friends.",
+          "Setting off sparklers and fireworks, or watching a community display.",
+        ],
+      },
+      {
+        h: "Why fireworks are part of Diwali",
+        p: [
+          "Bright lights and loud celebration are a long tradition of the festival. For many families, the glow and the noise mean joy and a welcome to good fortune. Children in particular love sparklers and the bright colours of the evening sky.",
+        ],
+      },
+      {
+        h: "Air quality, noise and safety",
+        p: [
+          "In recent years, many cities have raised concerns about smoke, noise and fire risks around Diwali. Smoke can add to air pollution and is hard on people with breathing problems, and the loud bangs can frighten pets, children and elderly people. Some places restrict or limit fireworks, and India has promoted so-called green crackers, which are designed to reduce emissions and noise. Rules vary from place to place, so always check what is allowed where you live, and read our fireworks safety guide before using anything at home.",
+        ],
+      },
+      {
+        h: "Greener ways to celebrate",
+        list: [
+          "Watch a public display run by trained professionals, instead of lighting your own.",
+          "Fill your home with diyas, lanterns and LED string lights.",
+          "Host a virtual fireworks show. On BlastSky, choose the Diwali gold theme for warm golden bursts.",
+          "Write a greeting such as Shubh Deepavali in the sky, and send the link to relatives who live far away.",
+          "Keep pets in a quiet room, and give them something comforting to chew.",
+        ],
+      },
+      {
+        h: "A happy Diwali, wherever you are",
+        p: [
+          "However you celebrate, the spirit of the festival is warmth, family and light. If you cannot be with loved ones this year, a shared greeting link can make the distance feel smaller.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "new-years-eve-fireworks-around-the-world",
+    title: "New Year's Eve Fireworks Around the World",
+    description:
+      "How the new year arrives around the world, which cities are famous for their midnight fireworks, some New Year traditions beyond fireworks, and tips for watching in person or from home.",
+    date: "2026-10-18",
+    blocks: [
+      {
+        p: [
+          "At midnight on New Year's Eve, cities around the world mark the moment with fireworks. Because of time zones, the new year does not arrive everywhere at once. It begins in the Pacific and then travels westward around the planet, so you can follow celebrations for about a day.",
+        ],
+      },
+      {
+        h: "How the new year travels",
+        p: [
+          "The world's time zones stretch across about 26 hours, from the earliest places in the Pacific to the last. Small island nations in the Pacific are among the first to welcome the new year. Large cities in Australia and Asia follow, then Europe and Africa, and finally the Americas. That is why people in one country can already be sharing photos of fireworks while others are still eating dinner.",
+        ],
+      },
+      {
+        h: "Famous New Year displays",
+        p: [
+          "These are long-running traditions, but organisers can change, shorten or cancel shows, so always check the plans for the current year.",
+        ],
+        list: [
+          "Sydney: fireworks over the harbour, with the Harbour Bridge and Opera House as the backdrop.",
+          "London: a show along the River Thames near the London Eye, usually with ticketed viewing areas.",
+          "Dubai: displays around the Burj Khalifa, the world's tallest tower.",
+          "Edinburgh: the Hogmanay street party, with fireworks above the castle.",
+          "Rio de Janeiro: a huge beach party on Copacabana, where many people wear white.",
+          "Taipei: fireworks launched from the sides of the Taipei 101 tower.",
+        ],
+      },
+      {
+        h: "Traditions beyond fireworks",
+        list: [
+          "Spain: eating twelve grapes, one with each stroke of midnight, for good luck in the new year.",
+          "Japan: temple bells are rung 108 times to clear away worldly worries.",
+          "Scotland: singing Auld Lang Syne with arms linked in a circle.",
+          "Many countries: making resolutions, a midnight toast and a countdown out loud.",
+        ],
+      },
+      {
+        h: "Tips for watching in person",
+        list: [
+          "Arrive early. The best spots fill up hours ahead of the show.",
+          "Plan your journey home before you go, since public transport is crowded afterward.",
+          "Dress warmly and wear comfortable shoes.",
+          "Agree a meeting point in case you are separated in the crowd.",
+          "Bring ear protection for children, and check the weather forecast.",
+        ],
+      },
+      {
+        h: "Celebrate from home",
+        p: [
+          "You do not have to travel to enjoy the moment. On BlastSky, pick the New Year theme and press Countdown. It counts from ten down to one, writes a New Year message in the sky and finishes with a big finale. Connect a laptop to a television, turn the volume up, and everyone can count down together. Our guide to hosting a virtual fireworks display has more setup ideas.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "how-to-photograph-fireworks",
+    title: "How to Photograph Fireworks on a Phone or Camera",
+    description:
+      "Clear, practical tips for photographing fireworks: what to do before the show, simple phone settings, starting settings for a camera, composition ideas and common mistakes to avoid.",
+    date: "2026-10-18",
+    blocks: [
+      {
+        p: [
+          "Fireworks are fast, bright and happen in the dark, which makes them tricky to photograph. The good news is that a few simple habits make a big difference. This guide covers both phones and cameras.",
+        ],
+      },
+      {
+        h: "Before the show",
+        list: [
+          "Arrive early and pick a spot with a clear view and, if you like, an interesting foreground such as a skyline, a bridge or water.",
+          "Check which way the wind blows, and stand upwind so smoke does not drift into your shot.",
+          "Bring a tripod or something steady to rest on, and a fully charged battery.",
+          "Wipe your lens clean. A smudge turns every burst into a blur.",
+        ],
+      },
+      {
+        h: "On a phone",
+        list: [
+          "Turn the flash off. It cannot reach the sky and only spoils the exposure.",
+          "Use night mode if your phone has it, and keep the phone as still as you can.",
+          "Tap the sky to set focus, then hold to lock it. If the bursts look too bright, lower the exposure slider a little.",
+          "Try video as well. You can pull still frames from it afterward.",
+          "On some phones, a long-exposure option turns a live photo into a streaky light trail.",
+          "Avoid digital zoom, which makes the picture grainy. Move closer or crop later.",
+        ],
+      },
+      {
+        h: "On a camera: a starting point",
+        p: [
+          "Every show and every camera is different, so treat these as starting values and adjust after a few test shots.",
+        ],
+        list: [
+          "Use manual mode, and put the camera on a tripod.",
+          "Set a low ISO, such as 100 to 200.",
+          "Choose a mid-range aperture, such as f/8 to f/11.",
+          "Try a shutter speed of two to six seconds, so the trails of the burst draw out.",
+          "Switch to manual focus and set it to a distant light or to infinity.",
+          "Use a timer or a remote, so pressing the button does not shake the camera.",
+          "Shoot in RAW if you can, so you can recover details later.",
+        ],
+      },
+      {
+        h: "Composition tips",
+        list: [
+          "Include some of the landscape so the bursts have a sense of scale.",
+          "Leave empty sky above the skyline, because bursts can rise higher than you expect.",
+          "Try both horizontal and vertical shots.",
+          "For several bursts in one frame, keep the shutter open and cover the lens with a black card between bursts.",
+        ],
+      },
+      {
+        h: "Common mistakes",
+        list: [
+          "A shutter open for too long turns the sky white.",
+          "Hand-held shots come out blurry and shaky.",
+          "Autofocus hunts in the dark and misses the burst.",
+          "Spending the whole show looking at the screen, so you miss the display.",
+        ],
+      },
+      {
+        h: "Practise first",
+        p: [
+          "Timing matters most. Use the Save photo button on BlastSky to capture your own sky, and watch how long a burst takes to open, trail and fade. That rhythm is the same one you will see at a real show.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "history-of-fireworks",
+    title: "The History of Fireworks: From Ancient China to Modern Shows",
+    description:
+      "A short history of fireworks, from bamboo crackers and the discovery of gunpowder in China to Renaissance Europe, the rise of colour, and today's computer-controlled displays.",
+    date: "2026-10-18",
+    blocks: [
+      {
+        p: [
+          "Fireworks are among the oldest forms of entertainment still enjoyed in much the same way. The story starts in China and travels across the world over many centuries. Some dates are debated by historians, so the dates here are approximate.",
+        ],
+      },
+      {
+        h: "Bamboo and the first bangs",
+        p: [
+          "Long before gunpowder, people in China threw green bamboo stalks into fires. As the air inside the hollow sections heated and expanded, the bamboo burst with a loud crack. The sound was believed to scare away evil spirits, and the habit became part of celebrations such as the New Year. The idea of using noise to drive away bad luck is still part of festivals today.",
+        ],
+      },
+      {
+        h: "Gunpowder is discovered",
+        p: [
+          "Historians believe that Chinese alchemists, who were searching for an elixir of life, discovered gunpowder around the ninth century. It is a mixture of saltpetre, sulphur and charcoal. Packed into paper or bamboo tubes, it gave a much louder bang than bamboo alone, and these tubes became the first firecrackers. Over the following centuries, makers learned to add effects, including sparks and flashes.",
+        ],
+      },
+      {
+        h: "Fireworks travel west",
+        p: [
+          "Knowledge of gunpowder spread along trade routes through the Middle East and into Europe by about the thirteenth century. During the Renaissance, Italian craftsmen developed fireworks into an art form, with displays at royal weddings, victories and festivals. Makers began building the aerial shells that burst high in the sky.",
+        ],
+      },
+      {
+        h: "Fireworks and national celebrations",
+        p: [
+          "Fireworks became tied to national days and public events. Many accounts describe the first anniversary of American independence in 1777 as being marked with fireworks, which helped start a tradition that continues on 4 July. Elsewhere, fireworks mark everything from royal events to harvest festivals.",
+        ],
+      },
+      {
+        h: "The arrival of colour",
+        p: [
+          "For a long time, fireworks were mostly orange, gold and white, because the available materials burned those colours. In the nineteenth century, chemists began adding new metal compounds, which brought strong reds and greens. Rich blue was the hardest colour to get right and came last. Our guide to firework colours explains the chemistry in simple terms.",
+        ],
+      },
+      {
+        h: "Fireworks today",
+        list: [
+          "Electric igniters and computer control let crews fire hundreds of shells in a precise order.",
+          "Shows are timed to music to the fraction of a second.",
+          "Designers plan patterns carefully, such as rings, hearts and layered bursts.",
+          "Drone light shows have appeared as a quieter option that uses light and no powder.",
+          "Virtual fireworks, such as BlastSky, let anyone enjoy a show with no smoke, noise or risk.",
+        ],
+      },
+      {
+        h: "Why we still love them",
+        p: [
+          "After more than a thousand years, the appeal is the same: a bright moment shared with other people under the night sky. Whether you watch a huge public show or a small virtual one with your family, you are taking part in one of the oldest celebrations we have.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {
