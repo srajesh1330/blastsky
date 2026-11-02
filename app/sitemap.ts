@@ -6,7 +6,7 @@ const SITE = "https://blastsky.vercel.app";
 // Change a date only when that page's content really changes.
 // (Using "today" on every build makes Google distrust the dates.)
 const PAGES: { path: string; updated: string; changeFrequency: "weekly" | "monthly" | "yearly"; priority: number }[] = [
-  { path: "", updated: "2026-10-18", changeFrequency: "weekly", priority: 1 },
+  { path: "", updated: "2026-11-02", changeFrequency: "weekly", priority: 1 },
   { path: "/guides", updated: "2026-10-18", changeFrequency: "weekly", priority: 0.8 },
   { path: "/about", updated: "2026-10-06", changeFrequency: "yearly", priority: 0.5 },
   { path: "/contact", updated: "2026-10-16", changeFrequency: "yearly", priority: 0.4 },
