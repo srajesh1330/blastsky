@@ -46,3 +46,5 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .guide-list li { margin: 18px 0; }
 .guide-list li > a { font-size: 18px; font-weight: 700; }
 .guide-list p { margin: 4px 0 0; color: #b9c4dc; }
+
+.btn-link { display: inline-block; background: #ff9d2e; color: #1a0f00 !important; font-weight: 700; text-decoration: none !important; padding: 10px 18px; border-radius: 10px; }
