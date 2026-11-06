@@ -14,20 +14,48 @@ const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   other: ADSENSE_CLIENT ? { "google-adsense-account": ADSENSE_CLIENT } : undefined,
-  title: { default: "Fireworks Simulator Online Free – Virtual Fireworks | BlastSky", template: "%s | BlastSky" },
+  title: { default: "Fireworks Simulator Game – Free Virtual Fireworks Online | BlastSky", template: "%s | BlastSky" },
   description:
-    "BlastSky is a free online fireworks simulator. Watch a realistic virtual fireworks display with booming sound, tap the sky to launch your own shells, or start a countdown. Works on phones and computers, no download.",
+    "BlastSky is a free online fireworks simulator game. Watch a realistic virtual fireworks display with booming sound, tap the sky to launch your own shells, or start a countdown. Works on phones and computers, no download.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: SITE,
     siteName: "BlastSky",
-    title: "Fireworks Simulator Online Free – Virtual Fireworks | BlastSky",
-    description: "A free interactive fireworks simulator with realistic virtual fireworks and sound. Tap to launch your own.",
+    title: "Fireworks Simulator Game – Free Virtual Fireworks Online | BlastSky",
+    description: "A free interactive fireworks simulator game with realistic virtual fireworks and sound. Tap to launch your own.",
   },
 };
 
 export const viewport: Viewport = { themeColor: "#01020a", width: "device-width", initialScale: 1 };
+
+// Tells Google the site name and what the page is. There are no made-up ratings here.
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}/#website`,
+      url: SITE,
+      name: "BlastSky",
+      alternateName: ["BlastSky Fireworks Simulator", "BlastSky fireworks game"],
+      inLanguage: "en",
+    },
+    {
+      "@type": "WebApplication",
+      "@id": `${SITE}/#app`,
+      url: SITE,
+      name: "BlastSky Fireworks Simulator",
+      applicationCategory: "GameApplication",
+      operatingSystem: "Any (web browser)",
+      browserRequirements: "Requires JavaScript and a modern browser",
+      description:
+        "A free interactive fireworks simulator game that runs in your browser, with realistic virtual fireworks and sound.",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+  ],
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
@@ -38,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
         {gaOn ? (
           <>
             <Script id="ga-init" strategy="beforeInteractive">

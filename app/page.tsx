@@ -63,8 +63,8 @@ export default function Home() {
         </p>
         <h3>Is it a game?</h3>
         <p>
-          It is closer to a toy than a scored game. You choose the shells, the colours and the timing, and you
-          can write your own messages in the sky.
+          Yes, it works as a relaxing interactive fireworks game. There are no levels or scores. You choose the
+          shells, the colours and the timing, and you can write your own messages in the sky.
         </p>
         <h3>Can I use it for a party or New Year&apos;s Eve?</h3>
         <p>
