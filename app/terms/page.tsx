@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <LegalPage title="Terms of Use">
       <p>
-        These terms apply to your use of BlastSky (blastsky.vercel.app), which includes the fireworks simulator and
+        These terms apply to your use of BlastSky (blastsky.com), which includes the fireworks simulator and
         the guides. By using the site you agree to them. If you do not agree, please do not use the site.
       </p>
 

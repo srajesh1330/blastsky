@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <LegalPage title="Privacy Policy">
       <p>
-        This policy explains what information BlastSky (blastsky.vercel.app) collects and how it is used. We keep
+        This policy explains what information BlastSky (blastsky.com) collects and how it is used. We keep
         it to the minimum needed to run the site.
       </p>
 

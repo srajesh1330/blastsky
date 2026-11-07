@@ -230,7 +230,7 @@ export default function FireworksShow() {
     if (frontRef.current && cityFront) g.drawImage(frontRef.current, 0, 0, out.width, out.height);
     g.font = `${Math.max(14, Math.round(out.width * 0.016))}px system-ui, sans-serif`;
     g.fillStyle = "rgba(255,255,255,0.7)";
-    g.fillText("blastsky.vercel.app", 18, out.height - 16);
+    g.fillText("blastsky.com", 18, out.height - 16);
     out.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);

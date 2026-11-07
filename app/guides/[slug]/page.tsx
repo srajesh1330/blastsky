@@ -5,7 +5,7 @@ import LegalPage from "../../../components/LegalPage";
 import AdSlot from "../../../components/AdSlot";
 import { ARTICLES, getArticle } from "../../../lib/articles";
 
-const SITE = "https://blastsky.vercel.app";
+const SITE = "https://blastsky.com";
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ slug: a.slug }));
