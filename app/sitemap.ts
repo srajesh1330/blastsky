@@ -9,7 +9,7 @@ const PAGES: { path: string; updated: string; changeFrequency: "weekly" | "month
   { path: "", updated: "2026-11-05", changeFrequency: "weekly", priority: 1 },
   { path: "/guides", updated: "2026-10-18", changeFrequency: "weekly", priority: 0.8 },
   { path: "/about", updated: "2026-11-05", changeFrequency: "yearly", priority: 0.5 },
-  { path: "/contact", updated: "2026-11-05", changeFrequency: "yearly", priority: 0.4 },
+  { path: "/contact", updated: "2026-11-06", changeFrequency: "yearly", priority: 0.4 },
   { path: "/privacy", updated: "2026-11-05", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", updated: "2026-11-06", changeFrequency: "yearly", priority: 0.3 },
 ];
