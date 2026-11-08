@@ -17,7 +17,7 @@ export const ARTICLES: Article[] = [
     slug: "how-fireworks-work",
     title: "How Fireworks Work: Inside an Aerial Shell",
     description:
-      "A plain-language look inside an aerial firework shell: the stars, the burst charge, the fuse and the lift charge, and why you see the flash before you hear the boom.",
+      "A plain-language look inside an aerial firework shell: the stars, burst charge, fuse and lift charge, and why you see the flash before the boom.",
     date: "2026-10-10",
     blocks: [
       {
@@ -82,9 +82,9 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "types-of-fireworks-explained",
-    title: "Types of Fireworks Explained: Peony, Chrysanthemum, Willow, Kamuro and More",
+    title: "Types of Fireworks: Peony, Willow, Kamuro and More",
     description:
-      "A simple guide to the most common firework effects, from peonies and chrysanthemums to willows, brocades, kamuro, crossettes and pistils, and how to recognise each one.",
+      "A simple guide to common firework effects, from peonies and chrysanthemums to willows, brocades, kamuro, crossettes and pistils.",
     date: "2026-10-10",
     blocks: [
       {
@@ -158,9 +158,9 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "fireworks-colours-explained",
-    title: "Fireworks Colours Explained: What Makes Red, Green, Blue and Gold",
+    title: "Fireworks Colours: What Makes Red, Green and Blue",
     description:
-      "How firework colours are made: the metal compounds behind red, orange, yellow, green, blue and purple, why blue is the hardest colour, and what makes white and gold sparks.",
+      "How firework colours are made: the metals behind red, orange, yellow, green and blue, why blue is hardest, and what makes white and gold sparks.",
     date: "2026-10-10",
     blocks: [
       {
@@ -227,7 +227,7 @@ export const ARTICLES: Article[] = [
     slug: "fireworks-safety-tips",
     title: "Fireworks Safety Tips for Families and Pets",
     description:
-      "Practical fireworks safety tips: why a public display is the safest choice, rules to follow if fireworks are legal where you live, how to handle duds, and how to keep children and pets safe.",
+      "Practical firework safety tips: why public displays are safest, rules if fireworks are legal near you, handling duds, and keeping children and pets safe.",
     date: "2026-10-10",
     blocks: [
       {
@@ -302,9 +302,9 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "festival-fireworks-guide",
-    title: "Festival Fireworks Around the World, and How to Photograph Them",
+    title: "Festival Fireworks Around the World",
     description:
-      "A friendly guide to the biggest festivals that use fireworks, from New Year and Diwali to Independence Day, Bonfire Night and Lunar New Year, plus simple tips for watching and photographing a show.",
+      "The biggest festivals that use fireworks, from New Year and Diwali to Independence Day and Bonfire Night, plus tips for watching and photographing a show.",
     date: "2026-10-10",
     blocks: [
       {
@@ -368,9 +368,9 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "host-a-virtual-fireworks-display",
-    title: "How to Host a Virtual Fireworks Display at Home or at a Party",
+    title: "Host a Virtual Fireworks Display at Home or a Party",
     description:
-      "Step-by-step ideas for running a virtual fireworks display: setting up the screen and sound, planning a short programme with a countdown, and fun ways to celebrate New Year, Diwali, birthdays and more without real fireworks.",
+      "How to run a virtual fireworks display at home or a party: set up the screen and sound, plan a short show with a countdown, and ideas for any occasion.",
     date: "2026-10-13",
     blocks: [
       {
@@ -431,9 +431,9 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "diwali-fireworks-guide",
-    title: "Diwali and Fireworks: Meaning, Traditions and Greener Ideas",
+    title: "Diwali Fireworks: Meaning, Traditions and Greener Ideas",
     description:
-      "What Diwali celebrates, how families mark the five days of the festival of lights, why fireworks are part of it, and gentler ways to enjoy the celebration, including a virtual fireworks show.",
+      "What Diwali celebrates, how families mark the festival of lights, why fireworks are part of it, and gentler ways to celebrate, including a virtual show.",
     date: "2026-10-18",
     blocks: [
       {
@@ -492,7 +492,7 @@ export const ARTICLES: Article[] = [
     slug: "new-years-eve-fireworks-around-the-world",
     title: "New Year's Eve Fireworks Around the World",
     description:
-      "How the new year arrives around the world, which cities are famous for their midnight fireworks, some New Year traditions beyond fireworks, and tips for watching in person or from home.",
+      "How the new year travels around the world, which cities are famous for midnight fireworks, New Year traditions, and tips for watching in person or at home.",
     date: "2026-10-18",
     blocks: [
       {
@@ -551,7 +551,7 @@ export const ARTICLES: Article[] = [
     slug: "how-to-photograph-fireworks",
     title: "How to Photograph Fireworks on a Phone or Camera",
     description:
-      "Clear, practical tips for photographing fireworks: what to do before the show, simple phone settings, starting settings for a camera, composition ideas and common mistakes to avoid.",
+      "Practical tips for photographing fireworks: preparing before the show, simple phone settings, starting camera settings, composition and common mistakes.",
     date: "2026-10-18",
     blocks: [
       {
@@ -622,9 +622,9 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: "history-of-fireworks",
-    title: "The History of Fireworks: From Ancient China to Modern Shows",
+    title: "The History of Fireworks: Ancient China to Today",
     description:
-      "A short history of fireworks, from bamboo crackers and the discovery of gunpowder in China to Renaissance Europe, the rise of colour, and today's computer-controlled displays.",
+      "A short history of fireworks, from bamboo crackers and gunpowder in China to Renaissance Europe, the arrival of colour, and today's computer-timed shows.",
     date: "2026-10-18",
     blocks: [
       {

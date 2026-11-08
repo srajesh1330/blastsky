@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LegalPage from "../../components/LegalPage";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import { ARTICLES } from "../../lib/articles";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function GuidesPage() {
   return (
     <LegalPage title="Fireworks guides">
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Guides", href: "/guides" }]} />
       <p>Short, friendly guides to help you understand and enjoy fireworks.</p>
       <ul className="guide-list">
         {ARTICLES.map((a) => (

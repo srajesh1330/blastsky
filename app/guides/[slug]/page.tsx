@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import LegalPage from "../../../components/LegalPage";
 import AdSlot from "../../../components/AdSlot";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 import { ARTICLES, getArticle } from "../../../lib/articles";
 
 const SITE = "https://blastsky.com";
@@ -33,6 +34,7 @@ export default async function GuideArticle({ params }: { params: Promise<{ slug:
     "@type": "Article",
     headline: article.title,
     description: article.description,
+    image: `${SITE}/og-image.png`,
     datePublished: article.date,
     dateModified: article.date,
     author: { "@type": "Organization", name: "BlastSky" },
@@ -45,6 +47,13 @@ export default async function GuideArticle({ params }: { params: Promise<{ slug:
   return (
     <LegalPage title={article.title}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/guides" },
+          { name: article.title, href: `/guides/${article.slug}` },
+        ]}
+      />
       <p className="meta">Published {article.date}</p>
       {article.blocks.map((b, i) => (
         <section key={i}>

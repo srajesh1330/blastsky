@@ -17,13 +17,19 @@ export const metadata: Metadata = {
   title: { default: "Fireworks Simulator Game – Free Virtual Fireworks Online | BlastSky", template: "%s | BlastSky" },
   description:
     "BlastSky is a free online fireworks simulator game. Watch a realistic virtual fireworks display with booming sound, tap the sky to launch your own shells, or start a countdown. Works on phones and computers, no download.",
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: SITE,
     siteName: "BlastSky",
     title: "Fireworks Simulator Game – Free Virtual Fireworks Online | BlastSky",
     description: "A free interactive fireworks simulator game with realistic virtual fireworks and sound. Tap to launch your own.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "BlastSky: colourful fireworks over a night city skyline" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fireworks Simulator Game – Free Virtual Fireworks Online | BlastSky",
+    description: "A free interactive fireworks simulator game with realistic virtual fireworks and sound.",
+    images: ["/og-image.png"],
   },
 };
 

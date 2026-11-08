@@ -18,13 +18,16 @@ export default function AdSlot({ slot, className }: { slot?: string; className?:
   if (!CLIENT || !slot) return null;
 
   return (
-    <ins
-      className={`adsbygoogle ${className ?? ""}`}
-      style={{ display: "block" }}
-      data-ad-client={CLIENT}
-      data-ad-slot={slot}
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    />
+    <div className="ad-wrap" aria-label="Advertisement">
+      <span className="ad-label">Advertisement</span>
+      <ins
+        className={`adsbygoogle ${className ?? ""}`}
+        style={{ display: "block" }}
+        data-ad-client={CLIENT}
+        data-ad-slot={slot}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+    </div>
   );
 }

@@ -1,14 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import FireworksShow from "../components/FireworksShow";
 import AdSlot from "../components/AdSlot";
 import { ARTICLES } from "../lib/articles";
 import { CookieSettings } from "../components/Consent";
 
+export const metadata: Metadata = { alternates: { canonical: "/" } };
+
 export default function Home() {
   return (
     <>
+      <a href="#about" className="skip">Skip to the guides and questions</a>
+      <main>
       <FireworksShow />
-      <section className="doc">
+      <section className="doc" id="about">
+        <h1>BlastSky: Free Online Fireworks Simulator Game</h1>
         <h2>About this fireworks simulator</h2>
         <p>
           BlastSky is a free, interactive fireworks simulator that runs in your browser on phones, tablets and
@@ -91,6 +97,7 @@ export default function Home() {
           <CookieSettings />
         </nav>
       </section>
+      </main>
     </>
   );
 }

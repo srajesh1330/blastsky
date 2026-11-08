@@ -6,8 +6,8 @@ const SITE = "https://blastsky.com";
 // Change a date only when that page's content really changes.
 // (Using "today" on every build makes Google distrust the dates.)
 const PAGES: { path: string; updated: string; changeFrequency: "weekly" | "monthly" | "yearly"; priority: number }[] = [
-  { path: "", updated: "2026-11-07", changeFrequency: "weekly", priority: 1 },
-  { path: "/guides", updated: "2026-11-07", changeFrequency: "weekly", priority: 0.8 },
+  { path: "", updated: "2026-11-08", changeFrequency: "weekly", priority: 1 },
+  { path: "/guides", updated: "2026-11-08", changeFrequency: "weekly", priority: 0.8 },
   { path: "/about", updated: "2026-11-07", changeFrequency: "yearly", priority: 0.5 },
   { path: "/contact", updated: "2026-11-07", changeFrequency: "yearly", priority: 0.4 },
   { path: "/privacy", updated: "2026-11-07", changeFrequency: "yearly", priority: 0.3 },

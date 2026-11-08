@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FireworksEngine, drawScene, drawSkyline, type ShellKind, type Theme } from "../lib/fireworks";
 import { playBoom, unlockAudio, type BoomName } from "../lib/audio";
@@ -44,6 +45,7 @@ export default function FireworksShow() {
   const [note, setNote] = useState("");
   const tapKindRef = useRef<ShellKind | undefined>(undefined);
   const autoBefore = useRef(true);
+  const reducedMotion = useRef(false);
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -54,6 +56,22 @@ export default function FireworksShow() {
     const engine = new FireworksEngine(fx);
     if (smokeRef.current) engine.attachSmoke(smokeRef.current);
     engineRef.current = engine;
+
+    // Respect "reduce motion": no automatic show until the visitor asks for one.
+    reducedMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion.current) engine.setAuto(false);
+
+    // Keyboard play: Space or Enter launches a shell (when no control has focus).
+    const onKey = (e: KeyboardEvent) => {
+      if (!settings.current.started) return;
+      if (e.key !== " " && e.key !== "Enter") return;
+      const t = e.target as HTMLElement | null;
+      const tag = t?.tagName;
+      if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA" || tag === "BUTTON" || tag === "A" || t?.isContentEditable) return;
+      e.preventDefault();
+      engine.launch(undefined, undefined, tapKindRef.current);
+    };
+    window.addEventListener("keydown", onKey);
 
     engine.onTagDone = (tag) => {
       if (tag === "finale") {
@@ -125,6 +143,7 @@ export default function FireworksShow() {
     return () => {
       observer.disconnect();
       document.removeEventListener("fullscreenchange", onFs);
+      window.removeEventListener("keydown", onKey);
       engine.destroy();
       engineRef.current = null;
     };
@@ -133,6 +152,10 @@ export default function FireworksShow() {
   const start = async () => {
     await unlockAudio();
     settings.current.started = true;
+    if (reducedMotion.current) {
+      setAuto(false);
+      setNote("Auto show is paused because your device asks for reduced motion. Tap the sky or press Space to launch shells.");
+    }
     try {
       total.current = Number(localStorage.getItem("bs_total") || 0);
       const today = new Date().toDateString();
@@ -274,10 +297,15 @@ export default function FireworksShow() {
   };
 
   return (
-    <div ref={stageRef} className="stage" onPointerDown={onStagePointer}>
+    <div ref={stageRef} className="stage" role="region" aria-label="Fireworks simulator" onPointerDown={onStagePointer}>
       <canvas ref={skyRef} className="layer" aria-hidden="true" />
       <canvas ref={smokeRef} className="layer" aria-hidden="true" />
-      <canvas ref={fxRef} className="layer" aria-label="Fireworks show" />
+      <canvas ref={fxRef} className="layer" role="img" aria-label="Fireworks show animation" />
+      <nav className="topnav" aria-label="Site" onPointerDown={(e) => e.stopPropagation()}>
+        <Link href="/guides">Guides</Link>
+        <Link href="/about">About</Link>
+        <Link href="/contact">Contact</Link>
+      </nav>
       <canvas
         ref={frontRef}
         className="layer"
@@ -301,8 +329,9 @@ export default function FireworksShow() {
 
       {!started && (
         <div className="overlay">
-          <h1>BlastSky</h1>
+          <p className="brand">BlastSky</p>
           <p>Free online fireworks simulator: a realistic virtual fireworks display in your browser. Turn your sound on.</p>
+          <p className="warn">Heads up: this show has bright flashes and loud booms.</p>
           <button className="primary" onClick={start}>
             ▶ Start the show
           </button>
@@ -463,7 +492,7 @@ export default function FireworksShow() {
             />
           </label>
           <span className="hint">
-            Tap the sky to launch your own shell · Shells fired: {shells}
+            Tap the sky or press Space to launch a shell · Shells fired: {shells}
             {streak > 1 ? ` · 🔥 ${streak}-day streak, come back tomorrow!` : ""}
           </span>
         </div>
