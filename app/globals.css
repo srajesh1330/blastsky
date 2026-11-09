@@ -66,3 +66,5 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .crumbs li + li::before { content: "/"; margin-right: 6px; color: #5b6f8f; }
 .ad-wrap { min-height: 280px; margin: 24px 0; }
 .ad-label { display: block; text-align: center; font-size: 11px; color: #8ea0c4; margin-bottom: 4px; }
+
+.overlay .brand { color: #f3efe0; max-width: none; }
