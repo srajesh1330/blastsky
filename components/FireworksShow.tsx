@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FireworksEngine, drawScene, drawSkyline, type ShellKind, type Theme } from "../lib/fireworks";
+import { CITIES, type CityId } from "../lib/skylines";
 import { playBoom, unlockAudio, type BoomName } from "../lib/audio";
 
 const SHELLS: [ShellKind, string][] = [
@@ -16,7 +17,7 @@ const SHELLS: [ShellKind, string][] = [
 
 type SoundMode = "auto" | "boom1" | "boom2" | "off";
 
-export default function FireworksShow() {
+export default function FireworksShow({ preset }: { preset?: { city?: CityId; theme?: Theme } }) {
   const stageRef = useRef<HTMLDivElement>(null);
   const skyRef = useRef<HTMLCanvasElement>(null);
   const smokeRef = useRef<HTMLCanvasElement>(null);
@@ -29,7 +30,11 @@ export default function FireworksShow() {
   const [auto, setAuto] = useState(true);
   const [sound, setSound] = useState<SoundMode>("auto");
   const [volume, setVolume] = useState(80);
-  const [theme, setTheme] = useState<Theme>("mixed");
+  const [theme, setTheme] = useState<Theme>(preset?.theme ?? "mixed");
+  const [city, setCity] = useState<CityId>(preset?.city ?? "generic");
+  const cityRef = useRef<CityId>(preset?.city ?? "generic");
+  const initialTheme = useRef<Theme | undefined>(preset?.theme);
+  const fitRef = useRef<(() => void) | null>(null);
   const [shells, setShells] = useState(0);
   const [streak, setStreak] = useState(0);
   const total = useRef(0);
@@ -56,6 +61,7 @@ export default function FireworksShow() {
     const engine = new FireworksEngine(fx);
     if (smokeRef.current) engine.attachSmoke(smokeRef.current);
     engineRef.current = engine;
+    if (initialTheme.current) engine.setTheme(initialTheme.current);
 
     // Respect "reduce motion": no automatic show until the visitor asks for one.
     reducedMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -118,7 +124,7 @@ export default function FireworksShow() {
       const sctx = sky.getContext("2d");
       if (sctx) {
         sctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        drawScene(sctx, w, h);
+        drawScene(sctx, w, h, cityRef.current);
       }
 
       const front = frontRef.current;
@@ -128,12 +134,13 @@ export default function FireworksShow() {
         const fctx = front.getContext("2d");
         if (fctx) {
           fctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-          drawSkyline(fctx, w, h);
+          drawSkyline(fctx, w, h, cityRef.current);
         }
       }
       engine.resize(w, h, dpr);
     };
 
+    fitRef.current = fit;
     fit();
     engine.start();
 
@@ -419,6 +426,26 @@ export default function FireworksShow() {
             <button onClick={shareGreeting}>🔗 Share greeting</button>
           </div>
           {note && <span className="hint">{note}</span>}
+          <label>
+            City
+            <select
+              id="city-select"
+              name="city"
+              value={city}
+              onChange={(e) => {
+                const v = e.target.value as CityId;
+                setCity(v);
+                cityRef.current = v;
+                fitRef.current?.();
+              }}
+            >
+              {CITIES.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+          </label>
           <label>
             Theme
             <select

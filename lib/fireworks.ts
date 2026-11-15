@@ -1,3 +1,5 @@
+import { drawCityscape, type CityId } from "./skylines";
+
 export type ShellKind =
   | "peony"
   | "chrysanthemum"
@@ -174,7 +176,7 @@ function pickKind(): ShellKind {
 }
 
 /** Night sky, stars and a distant, paler city. Drawn once per resize, behind everything. */
-export function drawScene(ctx: CanvasRenderingContext2D, w: number, h: number) {
+export function drawScene(ctx: CanvasRenderingContext2D, w: number, h: number, city: CityId = "generic") {
   const sky = ctx.createLinearGradient(0, 0, 0, h);
   sky.addColorStop(0, "#01020a");
   sky.addColorStop(0.65, "#070d24");
@@ -189,6 +191,13 @@ export function drawScene(ctx: CanvasRenderingContext2D, w: number, h: number) {
     ctx.fillRect(srng() * w, srng() * h * 0.8, 0.6 + srng(), 0.6 + srng());
   }
   ctx.globalAlpha = 1;
+
+  if (city !== "generic") {
+    // A named city: a pale distant layer for depth, then the skyline with its landmarks.
+    drawCityscape(ctx, w, h, city, { color: "#0b1329", lit: true, seed: 99, low: true });
+    drawCityscape(ctx, w, h, city, { color: "#04060c", lit: true, seed: 2024 });
+    return;
+  }
 
   // Far skyline: lower and paler, so the near city in front has depth.
   const rng = mulberry32(99);
@@ -214,8 +223,12 @@ export function drawScene(ctx: CanvasRenderingContext2D, w: number, h: number) {
  * The near city, drawn on a layer IN FRONT of the fireworks. Every shell starts at the very
  * bottom, so it appears to rise from behind these buildings.
  */
-export function drawSkyline(ctx: CanvasRenderingContext2D, w: number, h: number) {
+export function drawSkyline(ctx: CanvasRenderingContext2D, w: number, h: number, city: CityId = "generic") {
   ctx.clearRect(0, 0, w, h);
+  if (city !== "generic") {
+    drawCityscape(ctx, w, h, city, { color: "#04060c", lit: true, seed: 2024 });
+    return;
+  }
   const rng = mulberry32(2024);
 
   // A continuous base, so no rocket can show through the gaps between buildings.

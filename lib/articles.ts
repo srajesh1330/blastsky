@@ -680,6 +680,262 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    slug: "fourth-of-july-fireworks-guide",
+    title: "4th of July Fireworks: History, Traditions and Safety",
+    description:
+      "Why Americans celebrate Independence Day with fireworks, how the tradition began, the famous shows, safety tips, and a way to enjoy a virtual show at home.",
+    date: "2026-11-09",
+    blocks: [
+      {
+        p: [
+          "Every year on July 4, towns and cities across the United States light up the night sky. Fireworks are so closely tied to Independence Day that many families plan their whole evening around them. This guide explains where the tradition comes from, how people celebrate, and how to stay safe.",
+        ],
+      },
+      {
+        h: "What the holiday marks",
+        p: [
+          "July 4 celebrates the adoption of the Declaration of Independence in 1776. The document announced that the American colonies considered themselves free from British rule. It is a federal holiday, so many people have the day off for cookouts, parades and family gatherings.",
+        ],
+      },
+      {
+        h: "How fireworks became part of it",
+        p: [
+          "Fireworks and celebration were linked from the very beginning. Many accounts say that the first anniversary in 1777 was marked with fireworks and illuminations, including in Philadelphia. Over the following decades the habit spread, and by the nineteenth century a July 4 without fireworks was hard to imagine.",
+        ],
+      },
+      {
+        h: "Famous July 4 shows",
+        p: [
+          "Details change from year to year, so check local listings, but these shows are well known:",
+        ],
+        list: [
+          "New York City: a large show over the water, often broadcast on television.",
+          "Boston: a concert and fireworks on the Charles River Esplanade.",
+          "Washington, DC: a show over the National Mall near the monuments.",
+          "Thousands of smaller shows: in parks, lakes and fairgrounds in towns of every size.",
+        ],
+      },
+      {
+        h: "Traditions beyond fireworks",
+        list: [
+          "Parades with marching bands and floats.",
+          "Barbecues, picnics and family reunions.",
+          "Red, white and blue decorations and clothing.",
+          "Concerts and patriotic music.",
+          "Small-town games, races and community events.",
+        ],
+      },
+      {
+        h: "Stay safe",
+        p: [
+          "Laws about consumer fireworks differ by state and by city, and some places ban them completely. Check your local rules before you buy anything, and follow the instructions on the label. The safest choice is a professional show. Our guide to fireworks safety has more tips, including how to handle duds and keep children and pets safe.",
+        ],
+      },
+      {
+        h: "A virtual 4th of July at home",
+        p: [
+          "If fireworks are banned where you live, the weather is bad, or you want a quiet option for children and pets, you can run a virtual show. On BlastSky, choose the red, white and blue theme, connect a laptop to a television, and let the show run. You can also write a message such as Happy 4th in the sky and send a greeting link to friends and family far away.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "bonfire-night-guide",
+    title: "Bonfire Night Explained: Guy Fawkes, Fireworks and Safety",
+    description:
+      "What Bonfire Night is, the story of the Gunpowder Plot, how people celebrate on 5 November in the UK, and how to enjoy fireworks safely or virtually.",
+    date: "2026-11-09",
+    blocks: [
+      {
+        p: [
+          "On the evening of 5 November, people across the United Kingdom gather around bonfires and watch fireworks. It is known as Bonfire Night, Guy Fawkes Night or Fireworks Night. The celebration is more than four hundred years old, and parts of it are also known in some other countries.",
+        ],
+      },
+      {
+        h: "The story behind it",
+        p: [
+          "In 1605, a group of conspirators planned to blow up the Houses of Parliament in London while the king was inside. The plot was discovered, and Guy Fawkes was found guarding barrels of gunpowder in a cellar beneath the building on the night of 4 to 5 November. People were told to light bonfires to celebrate the king's survival, and the custom has continued ever since.",
+        ],
+      },
+      {
+        h: "How people celebrate",
+        list: [
+          "Large community displays with a bonfire and fireworks in parks and fields.",
+          "A figure called the guy, traditionally burned on the bonfire.",
+          "Food such as toffee apples, jacket potatoes, sausages and parkin cake.",
+          "Sparklers for children, with an adult watching.",
+          "Torchlit processions in some towns, with Lewes in East Sussex being especially famous.",
+        ],
+      },
+      {
+        h: "Fireworks rules in the UK",
+        p: [
+          "The rules are strict, and they can change, so check the official government guidance. In general, fireworks cannot be sold to anyone under 18, and there is a night-time curfew on setting them off, with extended hours on a few special nights such as Bonfire Night and New Year's Eve. Many people choose a public display, which is run by trained organisers and usually raises money for a local group.",
+        ],
+      },
+      {
+        h: "Staying safe on Bonfire Night",
+        list: [
+          "Go to a licensed public display when you can.",
+          "Keep a bucket of water or a hose close by.",
+          "Stand well back, and never relight a firework that did not go off.",
+          "Keep animals indoors. Loud bangs frighten many pets, so close the curtains and play some background sound.",
+          "Keep a safe distance from the bonfire, and never use petrol or other fuel to light it.",
+        ],
+      },
+      {
+        h: "A quieter, virtual Bonfire Night",
+        p: [
+          "If the weather is wet, or you prefer a quieter evening, you can watch a virtual display. On BlastSky, choose a theme, turn the volume down a little, and use the Grand show for a planned sequence. It is a gentle alternative for young children, and for dogs and cats who do not like loud noise.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "canada-day-fireworks-guide",
+    title: "Canada Day Fireworks: Traditions and How to Celebrate",
+    description:
+      "What Canada Day celebrates, the traditions that go with it, other Canadian fireworks occasions such as Victoria Day, and ways to watch or enjoy a virtual show.",
+    date: "2026-11-09",
+    blocks: [
+      {
+        p: [
+          "On 1 July, Canadians gather in parks, waterfronts and city squares to celebrate Canada Day. Fireworks after dark are one of the most popular parts of the day. This guide covers the holiday, the traditions, and some safe ways to enjoy the show.",
+        ],
+      },
+      {
+        h: "What Canada Day marks",
+        p: [
+          "Canada Day marks the anniversary of 1 July 1867, when three colonies joined to form the Dominion of Canada. It was originally called Dominion Day, and was renamed Canada Day in 1982. It is a national holiday, and many communities hold events all day long.",
+        ],
+      },
+      {
+        h: "How people celebrate",
+        list: [
+          "Wearing red and white, and waving the maple leaf flag.",
+          "Free concerts, parades and community festivals.",
+          "Barbecues, picnics and time at the lake or cottage.",
+          "Citizenship ceremonies, where new Canadians are welcomed.",
+          "Fireworks displays in cities and towns in the evening.",
+        ],
+      },
+      {
+        h: "Other Canadian fireworks occasions",
+        p: [
+          "Canada Day is not the only time. Victoria Day, held in late May, has long been associated with fireworks in many parts of the country. New Year's Eve shows are held in cities from coast to coast, and some places have summer fireworks festivals. Dates and rules vary, so check your local listings.",
+        ],
+      },
+      {
+        h: "Fireworks safety in Canada",
+        p: [
+          "Fireworks rules in Canada depend on the province and the municipality, and many towns restrict or ban consumer fireworks, especially in dry weather. Check your local rules first, follow the label, and prefer a professional public display. For a few extra tips, read our fireworks safety guide.",
+        ],
+      },
+      {
+        h: "A virtual Canada Day show",
+        p: [
+          "If you cannot get to a show, or the weather does not cooperate, host a virtual one. On BlastSky, pick the red, white and blue theme, start the Grand show, and write a message such as Happy Canada Day in the sky. A shared greeting link lets friends and relatives anywhere in the world see it too.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "australia-fireworks-guide",
+    title: "Fireworks in Australia: New Year's Eve and Other Occasions",
+    description:
+      "Australia's best-known fireworks occasions, from Sydney Harbour on New Year's Eve to local celebrations, with notes on safety rules and virtual shows at home.",
+    date: "2026-11-09",
+    blocks: [
+      {
+        p: [
+          "Australia has some of the most famous fireworks in the world, mostly because of the way the new year arrives. Because Australia is in a time zone far ahead of Europe and the Americas, its shows are among the first big displays that people around the world see on New Year's Eve.",
+        ],
+      },
+      {
+        h: "Sydney on New Year's Eve",
+        p: [
+          "Sydney's harbour display is the best known. It is launched around the Harbour Bridge and the Opera House, with an early family-friendly show in the evening and a larger show at midnight. Many people watch from parks and foreshores, and large numbers watch it on television and online. Other cities, including Melbourne, Brisbane, Perth and Adelaide, hold their own shows.",
+        ],
+      },
+      {
+        h: "Other occasions",
+        list: [
+          "Australia Day, on 26 January, features fireworks in many cities. The day has different meanings for different people, and many Aboriginal and Torres Strait Islander people mark it differently, so some communities hold other events.",
+          "Local festivals, sporting events and city celebrations often end with fireworks.",
+          "In the Northern Territory, Territory Day on 1 July has been known as an occasion when the public could use fireworks under strict rules. Check the current rules before you plan anything.",
+        ],
+      },
+      {
+        h: "Fireworks rules",
+        p: [
+          "In most of Australia, fireworks are not sold to the general public. Displays are run by licensed operators with permits. Summer fire danger is a serious issue, and bans are common during hot, dry and windy weather. Always follow your state's guidance and the instructions of local fire authorities.",
+        ],
+      },
+      {
+        h: "Tips for watching the Sydney show",
+        list: [
+          "Arrive very early. The best spots fill up hours before the show.",
+          "Check the official event site for road closures and public transport changes.",
+          "Bring water, sun protection and something to sit on.",
+          "Plan how you will get home, since transport is very busy afterwards.",
+        ],
+      },
+      {
+        h: "Watch from home",
+        p: [
+          "You do not have to be in Sydney. On BlastSky, choose the New Year theme, press Countdown, and share the moment with friends and family. It counts from ten, writes a New Year message in the sky and finishes with a big finale.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "new-zealand-fireworks-guide",
+    title: "Fireworks in New Zealand: New Year, Matariki and Guy Fawkes",
+    description:
+      "How New Zealanders celebrate with fireworks, from one of the first New Year's Eve shows in the world to Matariki and Guy Fawkes Night, with safety notes.",
+    date: "2026-11-09",
+    blocks: [
+      {
+        p: [
+          "New Zealand sits near the International Date Line, so it is one of the first countries to welcome each new year. That makes its fireworks displays some of the earliest on New Year's Eve. This guide covers the main occasions and how to enjoy them safely.",
+        ],
+      },
+      {
+        h: "New Year's Eve",
+        p: [
+          "Auckland is best known for its midnight show, which is launched from the Sky Tower, the tall tower in the city centre. Other places around the country also hold celebrations and displays. Because the new year arrives early, people elsewhere often watch the New Zealand shows online first.",
+        ],
+      },
+      {
+        h: "Matariki",
+        p: [
+          "Matariki is the Māori New Year. It is marked when the Matariki star cluster appears in the sky in mid-winter, and it became a public holiday in New Zealand in 2022. It is traditionally a time to remember those who have died, to celebrate the present and to look ahead to the new year. Many events focus on stars, light and storytelling, and some places hold fireworks or light shows, so check local listings.",
+        ],
+      },
+      {
+        h: "Guy Fawkes Night",
+        p: [
+          "On 5 November, many New Zealanders celebrate Guy Fawkes Night with fireworks, a tradition that came from Britain. Fireworks are sold to the public only for a short period around that date, and there are rules on who may buy them, so check the current regulations. Many families prefer to attend a community display.",
+        ],
+      },
+      {
+        h: "Safety",
+        list: [
+          "Choose a public display when possible.",
+          "If you use fireworks, follow the instructions, keep water nearby and keep everyone well back.",
+          "Look after pets. Loud noises distress many animals, so keep them indoors.",
+          "During dry weather, check the fire danger warnings before using fireworks.",
+        ],
+      },
+      {
+        h: "A virtual show",
+        p: [
+          "If you want to join in from anywhere, you can run a virtual show on BlastSky. Choose a theme, press Countdown at midnight, or use the Grand show for a planned sequence. You can also write a message in the sky, such as Kia ora or Happy New Year, and share the link with friends.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {

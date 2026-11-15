@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ARTICLES } from "../lib/articles";
+import { CITY_PAGES } from "../lib/cityPages";
 
 const SITE = "https://blastsky.com";
 
@@ -18,7 +19,8 @@ const PAGES: { path: string; updated: string; changeFrequency: "weekly" | "month
 // so they are intentionally not listed here.
 export default function sitemap(): MetadataRoute.Sitemap {
   const articles = ARTICLES.map((a) => ({ path: `/guides/${a.slug}`, updated: a.date, changeFrequency: "monthly" as const, priority: 0.7 }));
-  return [...PAGES, ...articles].map((p) => ({
+  const cities = CITY_PAGES.map((c) => ({ path: `/${c.slug}`, updated: "2026-11-12", changeFrequency: "monthly" as const, priority: 0.8 }));
+  return [...PAGES, ...cities, ...articles].map((p) => ({
     url: `${SITE}${p.path}`,
     lastModified: new Date(p.updated),
     changeFrequency: p.changeFrequency,

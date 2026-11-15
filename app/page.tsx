@@ -3,6 +3,7 @@ import Link from "next/link";
 import FireworksShow from "../components/FireworksShow";
 import AdSlot from "../components/AdSlot";
 import { ARTICLES } from "../lib/articles";
+import { CITY_PAGES } from "../lib/cityPages";
 import { CookieSettings } from "../components/Consent";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
@@ -78,6 +79,16 @@ export default function Home() {
           <Link href="/guides/new-years-eve-fireworks-around-the-world">New Year&apos;s Eve fireworks</Link> has
           more ideas.
         </p>
+
+        <h2>Fireworks simulator by city</h2>
+        <p>Choose a famous skyline to watch a virtual show over, or open the Controls and pick a city.</p>
+        <ul>
+          {CITY_PAGES.map((c) => (
+            <li key={c.slug}>
+              <Link href={`/${c.slug}`}>{c.title}</Link>
+            </li>
+          ))}
+        </ul>
 
         <h2>Fireworks guides</h2>
         <ul>
