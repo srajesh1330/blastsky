@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type Gtag = (...args: unknown[]) => void;
@@ -56,7 +57,7 @@ export default function Consent() {
     <div className="consent" role="dialog" aria-label="Cookie consent">
       <p>
         We use cookies to count visits and, later, to show ads that keep BlastSky free. You can accept or
-        reject them. See our <a href="/privacy">privacy policy</a>.
+        reject them. See our <Link href="/privacy">privacy policy</Link>.
       </p>
       <div className="consent-row">
         <button onClick={() => choose(false)}>Reject</button>
