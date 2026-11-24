@@ -65,6 +65,8 @@ const JSON_LD = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  // The ad script is only loaded when you switch ads on (after approval and the consent setup).
+  const adsEnabled = process.env.NEXT_PUBLIC_ADSENSE_ENABLE === "true";
   // Only count real visits: not local testing and not Vercel preview deployments.
   const gaOn =
     process.env.NODE_ENV === "production" &&
@@ -83,7 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ) : null}
         {children}
         <Consent />
-        {client ? (
+        {client && adsEnabled ? (
           <Script
             async
             strategy="afterInteractive"
